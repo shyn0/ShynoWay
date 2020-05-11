@@ -114,7 +114,5 @@ sleep 0.7;
 shyno;
       done;
     fi;
-
-
 }
 shyno;
