@@ -59,8 +59,9 @@ echo
   elif [[ $more == "x" ]]; then
 shyno;
   else
-    while [[ $more != 1 && $more != 2 && $more != 3 && $more != 4 && $more != 5 && $more != 6 && $more != 7 && $more != 8 && $more != "x" ]];
+    while [[ $more != [1..8] && $more != "x" ]];
       do
+echo $?;
 clear
 echo -e "\e[1;31mERROR: write the correct number..\e[0m";
 sleep 0.7;
@@ -106,8 +107,9 @@ exit 0;
 echo "";
 
     else
-  while [[ $before != 1 && $before != 2 && $before != 3 && $before != 4 ]];
+  while [[ $before != [1..4] ]];
       do
+echo $?;
 clear
 echo -e "\e[1;31mERROR: write the correct number..\e[0m";
 sleep 0.7;
