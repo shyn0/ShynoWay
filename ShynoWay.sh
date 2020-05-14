@@ -18,7 +18,7 @@ echo "";
 echo -e "\e[1;31mversion: 1.0.0\e[0m";
 echo -e "\e[1;35mvk:\e[0m""\e[1;4;36m https://vk.com/linuxkelly\e[0m";
 echo "";
-echo -e "\e[43;30m $program\e[0m";
+echo -e " \e[43;30m $program \e[0m";
 echo "";
 $out;
 echo "";
@@ -150,8 +150,8 @@ echo
     elif [[ $before == 3 ]]; then
 echo
     elif [[ $before == "x" ]]; then
-exit 0;
 echo "";
+exit 0;
 
     else
   while [[ $before != [1..3] && $before != "x" ]];
