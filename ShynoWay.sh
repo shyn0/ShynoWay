@@ -33,14 +33,40 @@ echo -en "\e[1;35m (\e[0m""\e[1;31m#\e[0m""\e[1;35m_\e[0m""\e[1;31m#\e[0m";
 echo -en "\e[1;35m)\e[0m" "\e[1;31m> \e[0m";
  read load
     if [[ $load == "d" ]]; then
-echo
+        if [[ -d ~/$program ]]; then
+clear
+echo -e "\e[1;31m$program\e[0m" "\e[1;36mhas already been downloaded\e[0m";
+sleep 1.6;
+output;
+
+        else
+clear
+sleep 0.4;
+echo -e "\e[1;33mdownloading\e[0m" "\e[1;31m$program..\e[0m";
+sleep 1.5;
+clear
+sleep 0.7;
+git clone https://github.com/KellyShyno/$program
+cp -r $program ~
+rm -rf $program
+clear
+sleep 0.7;
+echo -e "\e[1;35mdownloading\e[0m" "\e[1;31m$program\e[0m" "\e[1;35mis complete\e[0m";
+echo "";
+echo -e "\e[1;36mYou can find\e[0m" "\e[1;31m$program\e[0m" "\e[1;36min home directory\e[0m";
+sleep 8;
+output;
+        fi;
+
     elif [[ $load == "x" ]]; then
 repo;
+
     else
 clear
 echo -e "\e[1;31mERROR: write the correct number..\e[0m";
 sleep 0.7;
 output;
+
     fi;
 }
 
@@ -66,12 +92,12 @@ echo -e "\e[1;33m Repositories:\e[0m";
 echo "";
 
 #amount
-echo -e "\e[1;35m/ \e[0m""\e[1;36m1\e[0m""\e[1;35m / \e[0m""\e[1;36mcustomPanel\e[0m";
-echo -e "\e[1;35m/ \e[0m""\e[1;36m2\e[0m""\e[1;35m / \e[0m""\e[1;36msudoInTermux\e[0m";
+echo -e "\e[1;35m/ \e[0m""\e[1;36m1\e[0m""\e[1;35m / \e[0m""\e[1;36mbaseInstall\e[0m";
+echo -e "\e[1;35m/ \e[0m""\e[1;36m2\e[0m""\e[1;35m / \e[0m""\e[1;36mcustomPanel\e[0m";
 echo -e "\e[1;35m/ \e[0m""\e[1;36m3\e[0m""\e[1;35m / \e[0m""\e[1;36mcustomShell\e[0m";
-echo -e "\e[1;35m/ \e[0m""\e[1;36m4\e[0m""\e[1;35m / \e[0m""\e[1;36msshLocalhost\e[0m";
-echo -e "\e[1;35m/ \e[0m""\e[1;36m5\e[0m""\e[1;35m / \e[0m""\e[1;36mcustomKaliShell\e[0m";
-echo -e "\e[1;35m/ \e[0m""\e[1;36m6\e[0m""\e[1;35m / \e[0m""\e[1;36mbaseInstall\e[0m";
+echo -e "\e[1;35m/ \e[0m""\e[1;36m4\e[0m""\e[1;35m / \e[0m""\e[1;36mcustomKaliShell\e[0m";
+echo -e "\e[1;35m/ \e[0m""\e[1;36m5\e[0m""\e[1;35m / \e[0m""\e[1;36msudoInTermux\e[0m";
+echo -e "\e[1;35m/ \e[0m""\e[1;36m6\e[0m""\e[1;35m / \e[0m""\e[1;36msshLocalhost\e[0m";
 echo -en "\e[1;31m/ \e[0m""\e[1;36m7\e[0m""\e[1;31m / \e[0m""\e[1;4;36mkillDevice\e[0m";
 echo -e "\e[1;35m (\e[0m""\e[1;31mpaid\e[0m""\e[1;35m)\e[0m";
 echo -en "\e[1;31m/ \e[0m""\e[1;36m8\e[0m""\e[1;31m / \e[0m""\e[1;4;36mpassTime\e[0m";
@@ -86,24 +112,46 @@ echo -en "\e[1;35m (\e[0m""\e[1;31m#\e[0m""\e[1;35m_\e[0m""\e[1;31m#\e[0m";
 echo -en "\e[1;35m)\e[0m" "\e[1;31m> \e[0m";
  read more
   if [[ $more == 1 ]]; then
-echo
+program="baseInstall";
+#toDo
+output;
+
   elif [[ $more == 2 ]]; then
-echo
+program="customPanel";
+#toDo
+output;
+
   elif [[ $more == 3 ]]; then
 program="customShell";
 out="./data/info/customShell.sh";
+#toDo
 output;
 
   elif [[ $more == 4 ]]; then
-echo
+program="customKaliShell";
+#toDo
+output;
+
   elif [[ $more == 5 ]]; then
-echo
+program="sudoInTermux";
+#toDo
+output;
+
   elif [[ $more == 6 ]]; then
-echo
+program="sshLocalhost";
+#toDo
+output;
+
   elif [[ $more == 7 ]]; then
-echo
+program="killDevice";
+#toDo
+output;
+
   elif [[ $more == 8 ]]; then
-echo
+program="passTime";
+#toDo
+output;
+
   elif [[ $more == "x" ]]; then
 shyno;
   else
