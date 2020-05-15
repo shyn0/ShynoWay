@@ -16,7 +16,7 @@ echo -e '\e[1;36m|____/|_| |_|\__, |_| |_|\___/ \_/\_/ \__,_|\__, |\e[0m'
 echo -e '\e[1;36m             |___/                          |___/\e[0m'
 echo "";
 echo -e "\e[1;31mversion: 1.0.0\e[0m";
-echo -e "\e[1;35mvk:\e[0m""\e[1;4;36m https://vk.com/linuxkelly\e[0m";
+echo -e "\e[1;35mvk:\e[0m" "\e[1;4;36mhttps://vk.com/linuxkelly\e[0m";
 echo "";
 echo -e " \e[43;30m $program \e[0m";
 echo "";
@@ -86,7 +86,7 @@ echo -e '\e[1;36m|____/|_| |_|\__, |_| |_|\___/ \_/\_/ \__,_|\__, |\e[0m'
 echo -e '\e[1;36m             |___/                          |___/\e[0m'
 echo "";
 echo -e "\e[1;31mversion: 1.0.0\e[0m";
-echo -e "\e[1;35mvk:\e[0m""\e[1;4;36m https://vk.com/linuxkelly\e[0m";
+echo -e "\e[1;35mvk:\e[0m" "\e[1;4;36mhttps://vk.com/linuxkelly\e[0m";
 echo "";
 echo -e "\e[1;33m Repositories:\e[0m";
 echo "";
@@ -154,14 +154,13 @@ output;
 
   elif [[ $more == "x" ]]; then
 shyno;
+
   else
-    while [[ $more != [1..8] && $more != "x" ]];
-      do
 clear
 echo -e "\e[1;31mERROR: write the correct number..\e[0m";
 sleep 0.7;
 repo;
-      done;
+
   fi;
 }
 
@@ -180,7 +179,7 @@ echo -e '\e[1;36m|____/|_| |_|\__, |_| |_|\___/ \_/\_/ \__,_|\__, |\e[0m'
 echo -e '\e[1;36m             |___/                          |___/\e[0m'
 echo "";
 echo -e "\e[1;31mversion: 1.0.0\e[0m";
-echo -e "\e[1;35mvk:\e[0m"" \e[1;4;36mhttps://vk.com/linuxkelly\e[0m";
+echo -e "\e[1;35mvk:\e[0m" "\e[1;4;36mhttps://vk.com/linuxkelly\e[0m";
 echo "";
 echo -e "\e[1;35m/ \e[0m""\e[1;36m1\e[0m""\e[1;35m / \e[0m""\e[1;36mrepositories\e[0m";
 echo -e "\e[1;35m/ \e[0m""\e[1;36m2\e[0m""\e[1;35m / \e[0m""\e[1;36mabout us\e[0m";
@@ -193,8 +192,10 @@ echo -en "\e[1;35m)\e[0m" "\e[1;31m> \e[0m";
 
     if [[ $before == 1 ]]; then
 repo;
+
     elif [[ $before == 2 ]]; then
 echo
+
     elif [[ $before == 3 ]]; then
 ./data/update/update.sh;
 ./ShynoWay.sh;
@@ -204,13 +205,92 @@ echo "";
 exit 0;
 
     else
-  while [[ $before != [1..3] && $before != "x" ]];
-      do
 clear
 echo -e "\e[1;31mERROR: write the correct number..\e[0m";
 sleep 0.7;
 shyno;
-      done;
+
     fi;
 }
+
+
+
+
+language() {
+clear
+sleep 0.16;
+echo "";
+echo -e '\e[1;36m ____  _                    __        __\e[0m'
+echo -e '\e[1;36m/ ___|| |__  _   _ _ __   __\ \      / /_ _ _   _\e[0m'
+echo -e '\e[1;35m\___ \| "_ \| | | | "_ \ / _ \ \ /\ / / _` | | | |\e[0m'
+echo -e '\e[1;35m ___) | | | | |_| | | | | (_) \ V  V / (_| | |_| |\e[0m'
+echo -e '\e[1;36m|____/|_| |_|\__, |_| |_|\___/ \_/\_/ \__,_|\__, |\e[0m'
+echo -e '\e[1;36m             |___/                          |___/\e[0m'
+echo "";
+echo -e "\e[1;31mversion: 1.0.0\e[0m";
+echo -e "\e[1;35mvk:\e[0m" "\e[1;4;36mhttps://vk.com/linuxkelly\e[0m";
+echo "";
+#select
+echo -e "\e[1;35m    --------------------\e[0m";
+echo -e "\e[1;35m    | \e[0m""\e[1;36mSelect language:""\e[1;35m |\e[0m";
+echo -e "\e[1;35m    --------------------\e[0m";
+echo "";
+#language.#0#1
+echo -e "\e[1;33m=============================\e[0m";
+echo -en '\e[1;33m|  \e[0m'"\e[1;35m[ \e[0m""\e[1;36m0\e[0m""\e[1;35m ] \e[0m";
+echo -en "\e[1;31mru\e[0m"'\e[1;33m  ||  ';
+echo -en "\e[1;35m[ \e[0m""\e[1;36m1\e[0m""\e[1;35m ] \e[0m";
+echo -e "\e[1;31meng\e[0m"'\e[1;33m  |';
+echo -e "\e[1;33m=============================\e[0m";
+#exit
+echo -e "\e[1;35m  =========================\e[0m";
+echo -en '  \e[1;35m|      \e[0m'"\e[1;33m[ \e[0m""\e[1;36mx\e[0m""\e[1;33m ] \e[0m";
+echo -e "\e[1;31mexit\e[0m"'\e[1;35m       |';
+echo -e "\e[1;35m  =========================\e[0m";
+echo "";
+echo -en "\e[1;35m (\e[0m""\e[1;31m#\e[0m""\e[1;35m_\e[0m""\e[1;31m#\e[0m";
+echo -en "\e[1;35m)\e[0m" "\e[1;31m> \e[0m";
+ read langVar
+    if [[ $langVar == 0 ]]; then
+clear
+echo -e "\e[1;35mSelected\e[0m" "\e[1;36mrussian\e[0m" "\e[1;35mlanguage\e[0m";
+sleep 1.2;
+lang=0;
 shyno;
+
+    elif [[ $langVar == 1 ]]; then
+clear
+echo -e "\e[1;35mSelected\e[0m" "\e[1;36menglish\e[0m" "\e[1;35mlanguage\e[0m";
+sleep 1.2;
+lang=1;
+shyno;
+
+    elif [[ $langVar == "x" ]]; then
+echo "";
+exit 0;
+
+    else
+clear
+echo -e "\e[1;31mERROR: write the correct number..\e[0m";
+sleep 0.7;
+language;
+
+    fi;
+
+
+}
+language;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
