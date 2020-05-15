@@ -36,7 +36,7 @@ echo -en "\e[1;35m)\e[0m" "\e[1;31m> \e[0m";
         if [[ -d ~/$program ]]; then
 clear
 echo -e "\e[1;31m$program\e[0m" "\e[1;36mhas already been downloaded\e[0m";
-sleep 1.6;
+sleep 2.1;
 output;
 
         else
@@ -54,7 +54,7 @@ sleep 0.7;
 echo -e "\e[1;35mdownloading\e[0m" "\e[1;31m$program\e[0m" "\e[1;35mis complete\e[0m";
 echo "";
 echo -e "\e[1;36mYou can find\e[0m" "\e[1;31m$program\e[0m" "\e[1;36min home directory\e[0m";
-sleep 8;
+sleep 7;
 output;
         fi;
 
@@ -113,7 +113,7 @@ echo -en "\e[1;35m)\e[0m" "\e[1;31m> \e[0m";
  read more
   if [[ $more == 1 ]]; then
 program="baseInstall";
-#toDo
+out="./data/info/baseInstall.sh";
 output;
 
   elif [[ $more == 2 ]]; then
@@ -196,7 +196,9 @@ repo;
     elif [[ $before == 2 ]]; then
 echo
     elif [[ $before == 3 ]]; then
-echo
+./data/update/update.sh;
+shyno;
+
     elif [[ $before == "x" ]]; then
 echo "";
 exit 0;
