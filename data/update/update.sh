@@ -2,9 +2,12 @@
 #KellyShyno
 #ShynoWay
 
-echo ""
-echo -e "\e[1;33mUpdating ShynoWay..\e[0m"
-echo ""
+clear
+sleep 0.4;
+echo "";
+echo -e "\e[1;33mUpdating ShynoWay..\e[0m";
+echo "";
+sleep 0.4;
 mkdir tmp
 cd tmp
 #reload repository
@@ -14,6 +17,10 @@ chmod -R a+rx *
 cp -r * ../../
 cd ../../
 rm -rf tmp
-echo ""
-echo -e "\e[1;32mUpdating complete\e[0m"
+clear
+sleep 0.4;
+echo "";
+echo -e "\e[1;32mUpdating complete\e[0m";
+echo "";
+sleep 0.4;
 #break a leg (&_&)
