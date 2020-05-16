@@ -200,6 +200,7 @@ echo
 
     elif [[ $before == 3 ]]; then
 ./data/update/update.sh;
+#KellyShyno
 ./ShynoWay.sh;
 
     elif [[ $before == "x" ]]; then
