@@ -92,6 +92,7 @@ echo -e "\e[1;33m Repositories:\e[0m";
 echo "";
 
 #amount
+#KellyShyno
 echo -e "\e[1;35m/ \e[0m""\e[1;36m1\e[0m""\e[1;35m / \e[0m""\e[1;36mbaseInstall\e[0m";
 echo -e "\e[1;35m/ \e[0m""\e[1;36m2\e[0m""\e[1;35m / \e[0m""\e[1;36mcustomPanel\e[0m";
 echo -e "\e[1;35m/ \e[0m""\e[1;36m3\e[0m""\e[1;35m / \e[0m""\e[1;36mcustomShell\e[0m";
@@ -159,6 +160,7 @@ shyno;
 clear
 echo -e "\e[1;31mERROR: write the correct number..\e[0m";
 sleep 0.7;
+#KellyShyno
 repo;
 
   fi;
@@ -237,7 +239,7 @@ echo -e "\e[1;35m    --------------------\e[0m";
 echo "";
 #language.#0#1
 echo -e "\e[1;33m=============================\e[0m";
-echo -en '\e[1;33m|  \e[0m'"\e[1;35m[ \e[0m""\e[1;36m0\e[0m""\e[1;35m ] \e[0m";
+echo -en '\e[1;33m|  '"\e[1;35m[ \e[0m""\e[1;36m0\e[0m""\e[1;35m ] \e[0m";
 echo -en "\e[1;31mru\e[0m"'\e[1;33m  ||  ';
 echo -en "\e[1;35m[ \e[0m""\e[1;36m1\e[0m""\e[1;35m ] \e[0m";
 echo -e "\e[1;31meng\e[0m"'\e[1;33m  |';
@@ -273,6 +275,7 @@ exit 0;
 clear
 echo -e "\e[1;31mERROR: write the correct number..\e[0m";
 sleep 0.7;
+#KellyShyno
 language;
 
     fi;
