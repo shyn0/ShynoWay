@@ -4,6 +4,17 @@
 
 #rise
 
+chlang() {
+  if [[ $lang == "ru" ]]; then
+out="./data/info/ru/$info";
+  elif [[ $lang == "eng" ]]; then
+out="./data/info/eng/$info";
+  fi;
+}
+
+
+
+
 output() {
 clear
 sleep 0.16;
@@ -114,43 +125,50 @@ echo -en "\e[1;35m)\e[0m" "\e[1;31m> \e[0m";
  read more
   if [[ $more == 1 ]]; then
 program="baseInstall";
-out="./data/info/baseInstall.sh";
+info="baseInstall.sh";
+chlang;
 output;
 
   elif [[ $more == 2 ]]; then
 program="customPanel";
-#toDo
+info="customPanel.sh";
+chlang;
 output;
 
   elif [[ $more == 3 ]]; then
 program="customShell";
-out="./data/info/customShell.sh";
-#toDo
+info="customShell.sh";
+chlang;
 output;
 
   elif [[ $more == 4 ]]; then
 program="customKaliShell";
-#toDo
+info="customKaliShell.sh";
+chlang;
 output;
 
   elif [[ $more == 5 ]]; then
 program="sudoInTermux";
-#toDo
+info="sudoInTermux.sh";
+chlang;
 output;
 
   elif [[ $more == 6 ]]; then
 program="sshLocalhost";
-#toDo
+info="sshLocalhost.sh";
+chlang;
 output;
 
   elif [[ $more == 7 ]]; then
 program="killDevice";
-#toDo
+info="killDevice.sh";
+chlang;
 output;
 
   elif [[ $more == 8 ]]; then
 program="passTime";
-#toDo
+info="passTime.sh";
+chlang;
 output;
 
   elif [[ $more == "x" ]]; then
@@ -258,14 +276,14 @@ echo -en "\e[1;35m)\e[0m" "\e[1;31m> \e[0m";
 clear
 echo -e "\e[1;35mSelected\e[0m" "\e[1;36mrussian\e[0m" "\e[1;35mlanguage\e[0m";
 sleep 1.2;
-lang=0;
+lang="ru";
 shyno;
 
     elif [[ $langVar == 1 ]]; then
 clear
 echo -e "\e[1;35mSelected\e[0m" "\e[1;36menglish\e[0m" "\e[1;35mlanguage\e[0m";
 sleep 1.2;
-lang=1;
+lang="eng";
 shyno;
 
     elif [[ $langVar == "x" ]]; then
@@ -284,17 +302,3 @@ language;
 
 }
 language;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
