@@ -256,18 +256,11 @@ echo -e "\e[1;35m    --------------------\e[0m";
 echo -e "\e[1;35m    | \e[0m""\e[1;36mSelect language:""\e[1;35m |\e[0m";
 echo -e "\e[1;35m    --------------------\e[0m";
 echo "";
+
 #language.#0#1
-echo -e "\e[1;33m=============================\e[0m";
-echo -en '\e[1;33m|  '"\e[1;35m[ \e[0m""\e[1;36m0\e[0m""\e[1;35m ] \e[0m";
-echo -en "\e[1;31mru\e[0m"'\e[1;33m  ||  ';
-echo -en "\e[1;35m[ \e[0m""\e[1;36m1\e[0m""\e[1;35m ] \e[0m";
-echo -e "\e[1;31meng\e[0m"'\e[1;33m  |';
-echo -e "\e[1;33m=============================\e[0m";
-#exit
-echo -e "\e[1;35m  =========================\e[0m";
-echo -en '  \e[1;35m|      \e[0m'"\e[1;33m[ \e[0m""\e[1;36mx\e[0m""\e[1;33m ] \e[0m";
-echo -e "\e[1;31mexit\e[0m"'\e[1;35m       |';
-echo -e "\e[1;35m  =========================\e[0m";
+echo -e "\e[1;35m[ \e[0m""\e[1;36m0\e[0m""\e[1;35m ] \e[0m""\e[1;36mru\e[0m";
+echo -e "\e[1;35m[ \e[0m""\e[1;36m1\e[0m""\e[1;35m ] \e[0m""\e[1;36meng\e[0m";
+echo -e "\e[1;35m[ \e[0m""\e[1;31mx\e[0m""\e[1;35m ] \e[0m""\e[1;31mexit\e[0m";
 echo "";
 echo -en "\e[1;35m (\e[0m""\e[1;31m#\e[0m""\e[1;35m_\e[0m""\e[1;31m#\e[0m";
 echo -en "\e[1;35m)\e[0m" "\e[1;31m> \e[0m";
