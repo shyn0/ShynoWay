@@ -105,9 +105,8 @@ echo -e "\e[1;35m/ \e[0m""\e[1;36m3\e[0m""\e[1;35m / \e[0m""\e[1;36mcustomShell\
 echo -e "\e[1;35m/ \e[0m""\e[1;36m4\e[0m""\e[1;35m / \e[0m""\e[1;36mcustomKaliShell\e[0m";
 echo -e "\e[1;35m/ \e[0m""\e[1;36m5\e[0m""\e[1;35m / \e[0m""\e[1;36msudoInTermux\e[0m";
 echo -e "\e[1;35m/ \e[0m""\e[1;36m6\e[0m""\e[1;35m / \e[0m""\e[1;36msshLocalhost\e[0m";
-echo -en "\e[1;31m/ \e[0m""\e[1;36m7\e[0m""\e[1;31m / \e[0m""\e[1;4;36mkillDevice\e[0m";
-echo -e "\e[1;35m (\e[0m""\e[1;31mpaid\e[0m""\e[1;35m)\e[0m";
-echo -en "\e[1;31m/ \e[0m""\e[1;36m8\e[0m""\e[1;31m / \e[0m""\e[1;4;36mpassTime\e[0m";
+echo -e "\e[1;35m/ \e[0m""\e[1;36m7\e[0m""\e[1;35m / \e[0m""\e[1;36mkillDevice\e[0m";
+echo -en "\e[1;31m/ \e[0m""\e[1;31m8\e[0m""\e[1;31m / \e[0m""\e[1;4;36mpassTime\e[0m";
 echo -e "\e[1;35m (\e[0m""\e[1;31mpaid\e[0m""\e[1;35m)\e[0m";
 echo "";
 echo -e "\e[1;33m================\e[0m";
@@ -241,14 +240,14 @@ echo -en "\e[1;35m)\e[0m" "\e[1;31m> \e[0m";
     if [[ $langVar == 0 ]]; then
 clear
 echo -e "\e[1;35mSelected\e[0m" "\e[1;36mrussian\e[0m" "\e[1;35mlanguage\e[0m";
-sleep 1.2;
+sleep 0.9;
 lang="ru";
 shyno;
 
     elif [[ $langVar == 1 ]]; then
 clear
 echo -e "\e[1;35mSelected\e[0m" "\e[1;36menglish\e[0m" "\e[1;35mlanguage\e[0m";
-sleep 1.2;
+sleep 0.9;
 lang="eng";
 shyno;
 
