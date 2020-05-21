@@ -4,7 +4,27 @@
 
 #rise
 
+banner() {
+clear
+sleep 0.16;
+echo "";
+echo -e '\e[1;36m ____  _                    __        __\e[0m';
+echo -e '\e[1;36m/ ___|| |__  _   _ _ __   __\ \      / /_ _ _   _\e[0m';
+echo -e '\e[1;35m\___ \| "_ \| | | | "_ \ / _ \ \ /\ / / _` | | | |\e[0m';
+echo -e '\e[1;35m ___) | | | | |_| | | | | (_) \ V  V / (_| | |_| |\e[0m';
+echo -e '\e[1;36m|____/|_| |_|\__, |_| |_|\___/ \_/\_/ \__,_|\__, |\e[0m';
+echo -e '\e[1;36m             |___/                          |___/\e[0m';
+echo "";
+echo -e "\e[1;31mversion: 1.1.2\e[0m";
+echo -e "\e[1;35mvk:\e[0m" "\e[1;4;36mhttps://vk.com/linuxkelly\e[0m";
+echo "";
+}
+
+
+
+
 chlang() {
+#choosing text due language
   if [[ $lang == "ru" ]]; then
 out="./data/info/ru/$info";
   elif [[ $lang == "eng" ]]; then
@@ -16,19 +36,7 @@ out="./data/info/eng/$info";
 
 
 output() {
-clear
-sleep 0.16;
-echo "";
-echo -e '\e[1;36m ____  _                    __        __\e[0m'
-echo -e '\e[1;36m/ ___|| |__  _   _ _ __   __\ \      / /_ _ _   _\e[0m'
-echo -e '\e[1;35m\___ \| "_ \| | | | "_ \ / _ \ \ /\ / / _` | | | |\e[0m'
-echo -e '\e[1;35m ___) | | | | |_| | | | | (_) \ V  V / (_| | |_| |\e[0m'
-echo -e '\e[1;36m|____/|_| |_|\__, |_| |_|\___/ \_/\_/ \__,_|\__, |\e[0m'
-echo -e '\e[1;36m             |___/                          |___/\e[0m'
-echo "";
-echo -e "\e[1;31mversion: 1.0.0\e[0m";
-echo -e "\e[1;35mvk:\e[0m" "\e[1;4;36mhttps://vk.com/linuxkelly\e[0m";
-echo "";
+banner;
 echo -e " \e[43;30m $program \e[0m";
 echo "";
 $out;
@@ -85,23 +93,10 @@ output;
 
 
 repo() {
-#repo
-clear
-sleep 0.16;
-echo "";
-echo -e '\e[1;36m ____  _                    __        __\e[0m'
-echo -e '\e[1;36m/ ___|| |__  _   _ _ __   __\ \      / /_ _ _   _\e[0m'
-echo -e '\e[1;35m\___ \| "_ \| | | | "_ \ / _ \ \ /\ / / _` | | | |\e[0m'
-echo -e '\e[1;35m ___) | | | | |_| | | | | (_) \ V  V / (_| | |_| |\e[0m'
-echo -e '\e[1;36m|____/|_| |_|\__, |_| |_|\___/ \_/\_/ \__,_|\__, |\e[0m'
-echo -e '\e[1;36m             |___/                          |___/\e[0m'
-echo "";
-echo -e "\e[1;31mversion: 1.0.0\e[0m";
-echo -e "\e[1;35mvk:\e[0m" "\e[1;4;36mhttps://vk.com/linuxkelly\e[0m";
-echo "";
+#repositories
+banner;
 echo -e "\e[1;33m Repositories:\e[0m";
 echo "";
-
 #amount
 #KellyShyno
 echo -e "\e[1;35m/ \e[0m""\e[1;36m1\e[0m""\e[1;35m / \e[0m""\e[1;36mbaseInstall\e[0m";
@@ -188,19 +183,8 @@ repo;
 
 
 shyno() {
-clear
-sleep 0.16;
-echo "";
-echo -e '\e[1;36m ____  _                    __        __\e[0m'
-echo -e '\e[1;36m/ ___|| |__  _   _ _ __   __\ \      / /_ _ _   _\e[0m'
-echo -e '\e[1;35m\___ \| "_ \| | | | "_ \ / _ \ \ /\ / / _` | | | |\e[0m'
-echo -e '\e[1;35m ___) | | | | |_| | | | | (_) \ V  V / (_| | |_| |\e[0m'
-echo -e '\e[1;36m|____/|_| |_|\__, |_| |_|\___/ \_/\_/ \__,_|\__, |\e[0m'
-echo -e '\e[1;36m             |___/                          |___/\e[0m'
-echo "";
-echo -e "\e[1;31mversion: 1.0.0\e[0m";
-echo -e "\e[1;35mvk:\e[0m" "\e[1;4;36mhttps://vk.com/linuxkelly\e[0m";
-echo "";
+#basic module
+banner;
 echo -e "\e[1;35m/ \e[0m""\e[1;36m1\e[0m""\e[1;35m / \e[0m""\e[1;36mrepositories\e[0m";
 echo -e "\e[1;35m/ \e[0m""\e[1;36m2\e[0m""\e[1;35m / \e[0m""\e[1;36mabout us\e[0m";
 echo -e "\e[1;35m/ \e[0m""\e[1;36m3\e[0m""\e[1;35m / \e[0m""\e[1;36mupdate\e[0m";
@@ -215,6 +199,7 @@ repo;
 
     elif [[ $before == 2 ]]; then
 echo
+#toDo
 
     elif [[ $before == 3 ]]; then
 ./data/update/update.sh;
@@ -238,20 +223,8 @@ shyno;
 
 
 language() {
-clear
-sleep 0.16;
-echo "";
-echo -e '\e[1;36m ____  _                    __        __\e[0m'
-echo -e '\e[1;36m/ ___|| |__  _   _ _ __   __\ \      / /_ _ _   _\e[0m'
-echo -e '\e[1;35m\___ \| "_ \| | | | "_ \ / _ \ \ /\ / / _` | | | |\e[0m'
-echo -e '\e[1;35m ___) | | | | |_| | | | | (_) \ V  V / (_| | |_| |\e[0m'
-echo -e '\e[1;36m|____/|_| |_|\__, |_| |_|\___/ \_/\_/ \__,_|\__, |\e[0m'
-echo -e '\e[1;36m             |___/                          |___/\e[0m'
-echo "";
-echo -e "\e[1;31mversion: 1.0.0\e[0m";
-echo -e "\e[1;35mvk:\e[0m" "\e[1;4;36mhttps://vk.com/linuxkelly\e[0m";
-echo "";
-#select
+#select language
+banner;
 echo -e "\e[1;35m    --------------------\e[0m";
 echo -e "\e[1;35m    | \e[0m""\e[1;36mSelect language:""\e[1;35m |\e[0m";
 echo -e "\e[1;35m    --------------------\e[0m";
