@@ -4,6 +4,14 @@
 
 #rise
 
+changeMod() {
+chmod -R a+rx *;
+}
+changeMod;
+
+
+
+
 banner() {
 clear
 sleep 0.16;
@@ -23,6 +31,21 @@ echo "";
 
 
 
+error() {
+  if [[ $lang == "ru" ]]; then
+clear
+echo -e "\e[1;31mERROR: введите верное число..\e[0m";
+sleep 0.7;
+  else
+clear
+echo -e "\e[1;31mERROR: write the correct number..\e[0m";
+sleep 0.7;
+  fi;
+}
+
+
+
+
 chlang() {
 #choosing text due language
   if [[ $lang == "ru" ]]; then
@@ -30,6 +53,63 @@ out="./data/info/ru/$info";
   elif [[ $lang == "eng" ]]; then
 out="./data/info/eng/$info";
   fi;
+}
+
+
+
+
+checkLangBeforeLoad() {
+    if [[ $lang == "ru" ]]; then
+clear
+echo -e "\e[1;31m$program\e[0m" "\e[1;36mуже была загружена\e[0m";
+sleep 1.5;
+output;
+    else
+clear
+echo -e "\e[1;31m$program\e[0m" "\e[1;36mhas already been downloaded\e[0m";
+sleep 1.5;
+output;
+    fi;
+}
+
+
+
+
+checkLangAfterLoad() {
+    if [[ $lang == "ru" ]]; then
+clear
+sleep 0.4;
+echo -e "\e[1;33mзагрузка\e[0m" "\e[1;31m$program..\e[0m";
+sleep 1.5;
+clear
+sleep 0.7;
+cd downloads/                                                                                                         git clone https://github.com/KellyShyno/$program
+cd ..
+clear
+sleep 0.7;
+echo -e "\e[1;35mзагрузка\e[0m" "\e[1;31m$program\e[0m" "\e[1;35mзавершена\e[0m";
+echo "";
+echo -e "\e[1;36mВы можете найти\e[0m" "\e[1;31m$program\e[0m" "\e[1;36mв директории 'downloads'\e[0m";
+sleep 7;
+
+    else
+clear
+sleep 0.4;
+echo -e "\e[1;33mdownloading\e[0m" "\e[1;31m$program..\e[0m";
+sleep 1.5;
+clear
+sleep 0.7;
+cd downloads/
+git clone https://github.com/KellyShyno/$program
+cd ..
+clear
+sleep 0.7;
+echo -e "\e[1;35mdownloading\e[0m" "\e[1;31m$program\e[0m" "\e[1;35mis complete\e[0m";
+echo "";
+echo -e "\e[1;36mYou can find\e[0m" "\e[1;31m$program\e[0m" "\e[1;36min 'downloads' directory\e[0m";
+sleep 7;
+
+    fi;
 }
 
 
@@ -52,38 +132,21 @@ echo -en "\e[1;35m (\e[0m""\e[1;31m#\e[0m""\e[1;35m_\e[0m""\e[1;31m#\e[0m";
 echo -en "\e[1;35m)\e[0m" "\e[1;31m> \e[0m";
  read load
     if [[ $load == "d" ]]; then
-        if [[ -d ~/$program ]]; then
-clear
-echo -e "\e[1;31m$program\e[0m" "\e[1;36mhas already been downloaded\e[0m";
-sleep 2.1;
-output;
+        if [[ -d downloads/$program ]]; then
+#checking language before load
+checkLangBeforeLoad;
 
         else
-clear
-sleep 0.4;
-echo -e "\e[1;33mdownloading\e[0m" "\e[1;31m$program..\e[0m";
-sleep 1.5;
-clear
-sleep 0.7;
-git clone https://github.com/KellyShyno/$program
-cp -r $program ~
-rm -rf $program
-clear
-sleep 0.7;
-echo -e "\e[1;35mdownloading\e[0m" "\e[1;31m$program\e[0m" "\e[1;35mis complete\e[0m";
-echo "";
-echo -e "\e[1;36mYou can find\e[0m" "\e[1;31m$program\e[0m" "\e[1;36min home directory\e[0m";
-sleep 7;
-output;
+#checking language after load
+checkLangAfterLoad;
+repo;
         fi;
 
     elif [[ $load == "x" ]]; then
 repo;
 
     else
-clear
-echo -e "\e[1;31mERROR: write the correct number..\e[0m";
-sleep 0.7;
+error;
 output;
 
     fi;
@@ -169,9 +232,7 @@ output;
 shyno;
 
   else
-clear
-echo -e "\e[1;31mERROR: write the correct number..\e[0m";
-sleep 0.7;
+error;
 #KellyShyno
 repo;
 
@@ -210,9 +271,7 @@ echo "";
 exit 0;
 
     else
-clear
-echo -e "\e[1;31mERROR: write the correct number..\e[0m";
-sleep 0.7;
+error;
 shyno;
 
     fi;
@@ -256,9 +315,7 @@ echo "";
 exit 0;
 
     else
-clear
-echo -e "\e[1;31mERROR: write the correct number..\e[0m";
-sleep 0.7;
+error;
 #KellyShyno
 language;
 
