@@ -1,6 +1,6 @@
 # ShynoWay
 
-> **ShynoWay - programs installer by KellyShyno**
+> **ShynoWay - is the programs installer by KellyShyno**
 
 ## Installing
 
