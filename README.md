@@ -1,17 +1,19 @@
-h1 ShynoWay by KellyShyno
+# ShynoWay by KellyShyno
 
-h3 ShynoWay - programs installer by KellyShyno
+### ShynoWay - programs installer by KellyShyno
 
-**installing..**
+***installing..***
 
-***git clone https://github.com/KellyShyno/ShynoWay***
+> git clone https://github.com/KellyShyno/ShynoWay
 
-***cd ShynoWay***
+> cd ShynoWay
 
-***./ShynoWay.sh***
+> ./ShynoWay.sh
 
-vk: <https://vk.com/linuxkelly>
+## About us
 
-YouTube: <https://www.youtube.com/channel/UC0FAZ36boaHKZgzbD3rMa_A>
+> **vk**: <https://vk.com/linuxkelly>
 
-break a leg (&_&)
+> **YouTube**: <https://www.youtube.com/channel/UC0FAZ36boaHKZgzbD3rMa_A>
+
+*break a leg (#_#)*
