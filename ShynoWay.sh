@@ -30,16 +30,18 @@ echo "";
 
 
 
-
 error() {
+#error module
   if [[ $lang == "ru" ]]; then
 clear
 echo -e "\e[1;31mERROR: введите верное число..\e[0m";
 sleep 0.7;
+
   else
 clear
 echo -e "\e[1;31mERROR: write the correct number..\e[0m";
 sleep 0.7;
+
   fi;
 }
 
@@ -47,8 +49,10 @@ sleep 0.7;
 
 
 loadAll() {
+#program names for array
 programsName=("baseInstall" "customPanel" "customShell" "customKaliShell"
 "sudoInTermux" "sshLocalhost" "killDevice" "passTime");
+
 if [[ $lang == "ru" ]]; then
 #forRu
     for item in ${programsName[@]};
