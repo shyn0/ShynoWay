@@ -46,6 +46,67 @@ sleep 0.7;
 
 
 
+loadAll() {
+programsName=("baseInstall" "customPanel" "customShell" "customKaliShell"
+"sudoInTermux" "sshLocalhost" "killDevice" "passTime");
+if [[ $lang == "ru" ]]; then
+#forRu
+    for item in ${programsName[@]};
+     do
+#checking directory exists
+      if [[ -d downloads/$item ]]; then
+clear
+sleep 0.2;
+echo -e "\e[1;31m$item\e[0m" "\e[1;36mуже была загружена\e[0m";
+sleep 1.1;
+
+      else
+clear
+sleep 0.2;
+echo -e "\e[1;33mзагрузка\e[0m" "\e[1;31m$item..\e[0m";
+sleep 1.1;
+clear
+sleep 0.2;
+cd downloads/
+git clone https://github.com/KellyShyno/$item
+cd ..
+
+      fi;
+
+     done;
+
+else
+#forEng
+    for item in ${programsName[@]};
+     do
+#checking directory exists
+      if [[ -d downloads/$item ]]; then
+clear
+sleep 0.2;
+echo -e "\e[1;31m$item\e[0m" "\e[1;36mhas already been downloaded\e[0m";
+sleep 1.1;
+
+      else
+clear
+sleep 0.2;
+echo -e "\e[1;33mdownloading\e[0m" "\e[1;31m$item..\e[0m";
+sleep 1.1;
+clear
+sleep 0.2;
+cd downloads/
+git clone https://github.com/KellyShyno/$item
+cd ..
+
+      fi;
+
+     done;
+
+fi;
+}
+
+
+
+
 chlang() {
 #choosing text due language
   if [[ $lang == "ru" ]]; then
@@ -84,6 +145,7 @@ sleep 1.5;
 clear
 sleep 0.7;
 cd downloads/                                                                                                         git clone https://github.com/KellyShyno/$program
+git clone https://github.com/KellyShyno/$program
 cd ..
 clear
 sleep 0.7;
@@ -122,7 +184,7 @@ echo "";
 $out;
 echo "";
 echo -e "\e[1;33m====================================\e[0m";
-echo -en '\e[1;33m|  \e[0m'"\e[1;35m[ \e[0m""\e[1;36mx\e[0m""\e[1;35m ] \e[0m";
+echo -en '\e[1;33m|  \e[0m'"\e[1;31m[ \e[0m""\e[1;36mx\e[0m""\e[1;31m ] \e[0m";
 echo -en "\e[1;36mback\e[0m"'\e[1;33m  ||  ';
 echo -en "\e[1;35m[ \e[0m""\e[1;36md\e[0m""\e[1;35m ] \e[0m";
 echo -e "\e[1;36mdownload\e[0m"'\e[1;33m  |';
@@ -172,10 +234,12 @@ echo -e "\e[1;35m/ \e[0m""\e[1;36m7\e[0m""\e[1;35m / \e[0m""\e[1;36mkillDevice\e
 echo -en "\e[1;31m/ \e[0m""\e[1;31m8\e[0m""\e[1;31m / \e[0m""\e[1;4;36mpassTime\e[0m";
 echo -e "\e[1;35m (\e[0m""\e[1;31mpaid\e[0m""\e[1;35m)\e[0m";
 echo "";
-echo -e "\e[1;33m================\e[0m";
-echo -en '\e[1;33m|  \e[0m'"\e[1;35m[ \e[0m""\e[1;36mx\e[0m""\e[1;35m ] \e[0m";
-echo -e "\e[1;36mback\e[0m"'\e[1;33m  |';
-echo -e "\e[1;33m================\e[0m";
+echo -e "\e[1;33m========================================\e[0m";
+echo -en '\e[1;33m|  \e[0m'"\e[1;31m[ \e[0m""\e[1;36mx\e[0m""\e[1;31m ] \e[0m";
+echo -en "\e[1;36mback\e[0m"'\e[1;33m  ||  ';
+echo -en "\e[1;35m[ \e[0m""\e[1;36md\e[0m""\e[1;35m ] \e[0m";
+echo -e "\e[1;36mdownload all\e[0m"'\e[1;33m  |';
+echo -e "\e[1;33m========================================\e[0m";
 echo "";
 echo -en "\e[1;35m (\e[0m""\e[1;31m#\e[0m""\e[1;35m_\e[0m""\e[1;31m#\e[0m";
 echo -en "\e[1;35m)\e[0m" "\e[1;31m> \e[0m";
@@ -228,6 +292,10 @@ info="passTime.sh";
 chlang;
 output;
 
+  elif [[ $more == "d" ]]; then
+loadAll;
+repo;
+
   elif [[ $more == "x" ]]; then
 shyno;
 
@@ -248,7 +316,7 @@ banner;
 echo -e "\e[1;35m/ \e[0m""\e[1;36m1\e[0m""\e[1;35m / \e[0m""\e[1;36mrepositories\e[0m";
 echo -e "\e[1;35m/ \e[0m""\e[1;36m2\e[0m""\e[1;35m / \e[0m""\e[1;36mabout us\e[0m";
 echo -e "\e[1;35m/ \e[0m""\e[1;36m3\e[0m""\e[1;35m / \e[0m""\e[1;36mupdate\e[0m";
-echo -e "\e[1;35m/ \e[0m""\e[1;36mx\e[0m""\e[1;35m / \e[0m""\e[1;36mexit\e[0m";
+echo -e "\e[1;35m/ \e[0m""\e[1;31mx\e[0m""\e[1;35m / \e[0m""\e[1;31mexit\e[0m";
 echo "";
 echo -en "\e[1;35m (\e[0m""\e[1;31m#\e[0m""\e[1;35m_\e[0m""\e[1;31m#\e[0m";
 echo -en "\e[1;35m)\e[0m" "\e[1;31m> \e[0m";
