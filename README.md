@@ -1,8 +1,9 @@
-# ShynoWay by KellyShyno
+#     ShynoWay
 
 ### ShynoWay - programs installer by KellyShyno
 
-***installing..***
+
+## Installing
 
 > git clone https://github.com/KellyShyno/ShynoWay
 
