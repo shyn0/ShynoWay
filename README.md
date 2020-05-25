@@ -1,15 +1,14 @@
-#     ShynoWay
+# ShynoWay
 
-### ShynoWay - programs installer by KellyShyno
-
+> **ShynoWay - programs installer by KellyShyno**
 
 ## Installing
 
 `git clone https://github.com/KellyShyno/ShynoWay`
 
-> cd ShynoWay
+`cd ShynoWay`
 
-> ./ShynoWay.sh
+`./ShynoWay.sh`
 
 ## About us
 
