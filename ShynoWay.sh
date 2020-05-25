@@ -23,7 +23,7 @@ echo -e '\e[1;35m ___) | | | | |_| | | | | (_) \ V  V / (_| | |_| |\e[0m';
 echo -e '\e[1;36m|____/|_| |_|\__, |_| |_|\___/ \_/\_/ \__,_|\__, |\e[0m';
 echo -e '\e[1;36m             |___/                          |___/\e[0m';
 echo "";
-echo -e "\e[1;31mversion: 1.1.2\e[0m";
+echo -e "\e[1;31mversion: 2.3.2\e[0m";
 echo -e "\e[1;35mvk:\e[0m" "\e[1;4;36mhttps://vk.com/linuxkelly\e[0m";
 echo "";
 }
