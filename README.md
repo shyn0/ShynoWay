@@ -1,13 +1,11 @@
-#KellyShyno
-#ShynoWay
-#ShynoWay - programs installer by KellyShyno
-#rise
-#installing..
-cd ~
-git clone https://github.com/KellyShyno/ShynoWay
-cd ShynoWay
-chmod -R a+rx *
-./ShynoWay.sh
-#break a leg (&_&)
-#vk: https://vk.com/linuxkelly
-#YouTube: https://www.youtube.com/channel/UC0FAZ36boaHKZgzbD3rMa_A
+**ShynoWay by KellyShyno**
+
+**ShynoWay** - programs installer by KellyShyno
+
+**installing..**
+***git clone https://github.com/KellyShyno/ShynoWay***
+***cd ShynoWay***
+***./ShynoWay.sh***
+break a leg (&_&)
+vk: <https://vk.com/linuxkelly>
+YouTube: <https://www.youtube.com/channel/UC0FAZ36boaHKZgzbD3rMa_A>
