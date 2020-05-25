@@ -5,7 +5,7 @@
 
 ## Installing
 
-> git clone https://github.com/KellyShyno/ShynoWay
+`git clone https://github.com/KellyShyno/ShynoWay`
 
 > cd ShynoWay
 
