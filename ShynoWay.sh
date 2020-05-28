@@ -181,9 +181,21 @@ sleep 7;
 
 
 
+programBlockName() {
+#red or yellow background
+    if [[ $more > 0 && $more < 8 ]]; then
+echo -e " \e[43;30m $program \e[0m";
+    else
+echo -e " \e[41;1m $program \e[0m";
+    fi;
+}
+
+
+
+
 output() {
 banner;
-echo -e " \e[43;30m $program \e[0m";
+programBlockName;
 echo "";
 $out;
 echo "";
@@ -318,8 +330,9 @@ shyno() {
 #basic module
 banner;
 echo -e "\e[1;35m/ \e[0m""\e[1;36m1\e[0m""\e[1;35m / \e[0m""\e[1;36mrepositories\e[0m";
-echo -e "\e[1;35m/ \e[0m""\e[1;36m2\e[0m""\e[1;35m / \e[0m""\e[1;36mabout us\e[0m";
+echo -e "\e[1;35m/ \e[0m""\e[1;36m2\e[0m""\e[1;35m / \e[0m""\e[1;36mlanguage\e[0m";
 echo -e "\e[1;35m/ \e[0m""\e[1;36m3\e[0m""\e[1;35m / \e[0m""\e[1;36mupdate\e[0m";
+echo -e "\e[1;35m/ \e[0m""\e[1;36m4\e[0m""\e[1;35m / \e[0m""\e[1;36mabout us\e[0m";
 echo -e "\e[1;35m/ \e[0m""\e[1;31mx\e[0m""\e[1;35m / \e[0m""\e[1;31mexit\e[0m";
 echo "";
 echo -en "\e[1;35m (\e[0m""\e[1;31m#\e[0m""\e[1;35m_\e[0m""\e[1;31m#\e[0m";
@@ -330,14 +343,18 @@ echo -en "\e[1;35m)\e[0m" "\e[1;31m> \e[0m";
 repo;
 
     elif [[ $before == 2 ]]; then
-echo
-#toDo
+clear
+sleep 0.16;
+language;
 
     elif [[ $before == 3 ]]; then
 ./data/update/update.sh;
 #KellyShyno
 ./ShynoWay.sh;
 
+    elif [[ $before == 4 ]]; then
+#toDo
+echo
     elif [[ $before == "x" ]]; then
 echo "";
 exit 0;
