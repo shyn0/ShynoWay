@@ -10,8 +10,6 @@ chmod -R a+rx *;
 changeMod;
 
 
-
-
 banner() {
 clear
 sleep 0.16;
@@ -29,23 +27,20 @@ echo "";
 }
 
 
-
 error() {
 #error module
   if [[ $lang == "ru" ]]; then
 clear
 echo -e "\e[1;31mERROR: введите верное число..\e[0m";
-sleep 0.7;
+sleep 0.6;
 
   else
 clear
 echo -e "\e[1;31mERROR: write the correct number..\e[0m";
-sleep 0.7;
+sleep 0.6;
 
   fi;
 }
-
-
 
 
 loadAll() {
@@ -109,8 +104,6 @@ fi;
 }
 
 
-
-
 chlang() {
 #choosing text due language
   if [[ $lang == "ru" ]]; then
@@ -121,23 +114,19 @@ out="./data/info/eng/$info";
 }
 
 
-
-
 checkLangBeforeLoad() {
     if [[ $lang == "ru" ]]; then
 clear
 echo -e "\e[1;31m$program\e[0m" "\e[1;36mуже была загружена\e[0m";
-sleep 1.5;
+sleep 1.3;
 output;
     else
 clear
 echo -e "\e[1;31m$program\e[0m" "\e[1;36mhas already been downloaded\e[0m";
-sleep 1.5;
+sleep 1.3;
 output;
     fi;
 }
-
-
 
 
 checkLangAfterLoad() {
@@ -145,18 +134,18 @@ checkLangAfterLoad() {
 clear
 sleep 0.4;
 echo -e "\e[1;33mзагрузка\e[0m" "\e[1;31m$program..\e[0m";
-sleep 1.5;
+sleep 1.1;
 clear
-sleep 0.7;
+sleep 0.2;
 cd downloads/                                                                                                         git clone https://github.com/KellyShyno/$program
 git clone https://github.com/KellyShyno/$program
 cd ..
 clear
-sleep 0.7;
+sleep 0.4;
 echo -e "\e[1;35mзагрузка\e[0m" "\e[1;31m$program\e[0m" "\e[1;35mзавершена\e[0m";
 echo "";
 echo -e "\e[1;36mВы можете найти\e[0m" "\e[1;31m$program\e[0m" "\e[1;36mв директории 'downloads'\e[0m";
-sleep 7;
+sleep 6;
 
     else
 clear
@@ -179,18 +168,14 @@ sleep 7;
 }
 
 
-
-
 programBlockName() {
 #red or yellow background
     if [[ $more > 0 && $more < 8 ]]; then
 echo -e " \e[43;30m $program \e[0m";
     else
-echo -e " \e[41;1m $program \e[0m";
+echo -e " \e[41;1m $program \e[0m""\e[1;35m (\e[0m""\e[1;31mpaid\e[0m""\e[1;35m)\e[0m";
     fi;
 }
-
-
 
 
 output() {
@@ -209,28 +194,21 @@ echo "";
 echo -en "\e[1;35m (\e[0m""\e[1;31m#\e[0m""\e[1;35m_\e[0m""\e[1;31m#\e[0m";
 echo -en "\e[1;35m)\e[0m" "\e[1;31m> \e[0m";
  read load
-    if [[ $load == "d" ]]; then
-        if [[ -d downloads/$program ]]; then
-#checking language before load
-checkLangBeforeLoad;
 
-        else
-#checking language after load
-checkLangAfterLoad;
-repo;
-        fi;
+  case $load in
+"d")
+      if [[ -d downloads/$program ]]; then
+        #checking language before load
+        checkLangBeforeLoad;
+      else
+        #checking language after load
+        checkLangAfterLoad; repo;
+      fi; ;;
 
-    elif [[ $load == "x" ]]; then
-repo;
-
-    else
-error;
-output;
-
-    fi;
+"x") repo; ;;
+*) error; output; ;;
+  esac;
 }
-
-
 
 
 repo() {
@@ -247,7 +225,7 @@ echo -e "\e[1;35m/ \e[0m""\e[1;36m4\e[0m""\e[1;35m / \e[0m""\e[1;36mcustomKaliSh
 echo -e "\e[1;35m/ \e[0m""\e[1;36m5\e[0m""\e[1;35m / \e[0m""\e[1;36msudoInTermux\e[0m";
 echo -e "\e[1;35m/ \e[0m""\e[1;36m6\e[0m""\e[1;35m / \e[0m""\e[1;36msshLocalhost\e[0m";
 echo -e "\e[1;35m/ \e[0m""\e[1;36m7\e[0m""\e[1;35m / \e[0m""\e[1;36mkillDevice\e[0m";
-echo -en "\e[1;31m/ \e[0m""\e[1;31m8\e[0m""\e[1;31m / \e[0m""\e[1;4;36mpassTime\e[0m";
+echo -en "\e[1;31m/ \e[0m""\e[1;31m8\e[0m""\e[1;31m / \e[0m""\e[1;4;35mpassTime\e[0m";
 echo -e "\e[1;35m (\e[0m""\e[1;31mpaid\e[0m""\e[1;35m)\e[0m";
 echo "";
 echo -e "\e[1;33m========================================\e[0m";
@@ -260,70 +238,21 @@ echo "";
 echo -en "\e[1;35m (\e[0m""\e[1;31m#\e[0m""\e[1;35m_\e[0m""\e[1;31m#\e[0m";
 echo -en "\e[1;35m)\e[0m" "\e[1;31m> \e[0m";
  read more
-  if [[ $more == 1 ]]; then
-program="baseInstall";
-info="baseInstall.sh";
-chlang;
-output;
 
-  elif [[ $more == 2 ]]; then
-program="customPanel";
-info="customPanel.sh";
-chlang;
-output;
-
-  elif [[ $more == 3 ]]; then
-program="customShell";
-info="customShell.sh";
-chlang;
-output;
-
-  elif [[ $more == 4 ]]; then
-program="customKaliShell";
-info="customKaliShell.sh";
-chlang;
-output;
-
-  elif [[ $more == 5 ]]; then
-program="sudoInTermux";
-info="sudoInTermux.sh";
-chlang;
-output;
-
-  elif [[ $more == 6 ]]; then
-program="sshLocalhost";
-info="sshLocalhost.sh";
-chlang;
-output;
-
-  elif [[ $more == 7 ]]; then
-program="killDevice";
-info="killDevice.sh";
-chlang;
-output;
-
-  elif [[ $more == 8 ]]; then
-program="passTime";
-info="passTime.sh";
-chlang;
-output;
-
-  elif [[ $more == "d" ]]; then
-loadAll;
-repo;
-
-  elif [[ $more == "x" ]]; then
-shyno;
-
-  else
-error;
-#KellyShyno
-repo;
-
-  fi;
+  case $more in
+1) program="baseInstall"; info="baseInstall.sh"; chlang; output; ;;
+2) program="customPanel"; info="customPanel.sh"; chlang; output; ;;
+3) program="customShell"; info="customShell.sh"; chlang; output; ;;
+4) program="customKaliShell"; info="customKaliShell.sh"; chlang; output; ;;
+5) program="sudoInTermux"; info="sudoInTermux.sh"; chlang; output; ;;
+6) program="sshLocalhost"; info="sshLocalhost.sh"; chlang; output; ;;
+7) program="killDevice"; info="killDevice.sh"; chlang; output; ;;
+8) program="passTime"; info="passTime.sh"; chlang; output; ;;
+"d") loadAll; repo; ;;
+"x") shyno; ;;
+*) error; repo; ;;
+  esac;
 }
-
-
 
 
 shyno() {
@@ -367,8 +296,6 @@ shyno;
 }
 
 
-
-
 language() {
 #select language
 banner;
@@ -388,14 +315,14 @@ echo -en "\e[1;35m)\e[0m" "\e[1;31m> \e[0m";
     if [[ $langVar == 0 ]]; then
 clear
 echo -e "\e[1;35mSelected\e[0m" "\e[1;36mrussian\e[0m" "\e[1;35mlanguage\e[0m";
-sleep 0.9;
+sleep 0.7;
 lang="ru";
 shyno;
 
     elif [[ $langVar == 1 ]]; then
 clear
 echo -e "\e[1;35mSelected\e[0m" "\e[1;36menglish\e[0m" "\e[1;35mlanguage\e[0m";
-sleep 0.9;
+sleep 0.7;
 lang="eng";
 shyno;
 
@@ -409,7 +336,5 @@ error;
 language;
 
     fi;
-
-
 }
 language;
