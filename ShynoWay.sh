@@ -29,17 +29,16 @@ echo "";
 
 error() {
 #error module
-  if [[ $lang == "ru" ]]; then
-clear
-echo -e "\e[1;31mERROR: введите верное число..\e[0m";
-sleep 0.6;
-
-  else
-clear
-echo -e "\e[1;31mERROR: write the correct number..\e[0m";
-sleep 0.6;
-
-  fi;
+  case $lang in
+"ru")
+ clear
+ echo -e "\e[1;31mERROR: введите верное число..\e[0m";
+ sleep 0.6; ;;
+*)
+ clear
+ echo -e "\e[1;31mERROR: write the correct number..\e[0m";
+ sleep 0.6; ;;
+  esac;
 }
 
 
@@ -99,45 +98,43 @@ cd ..
       fi;
 
      done;
-
 fi;
 }
 
 
 chlang() {
 #choosing text due language
-  if [[ $lang == "ru" ]]; then
-out="./data/info/ru/$info";
-  elif [[ $lang == "eng" ]]; then
-out="./data/info/eng/$info";
-  fi;
+  case $lang in
+"ru") out="./data/info/ru/$info"; ;;
+"eng") out="./data/info/eng/$info"; ;;
+  esac;
 }
 
 
 checkLangBeforeLoad() {
-    if [[ $lang == "ru" ]]; then
-clear
-echo -e "\e[1;31m$program\e[0m" "\e[1;36mуже была загружена\e[0m";
-sleep 1.3;
-output;
-    else
-clear
-echo -e "\e[1;31m$program\e[0m" "\e[1;36mhas already been downloaded\e[0m";
-sleep 1.3;
-output;
-    fi;
+    case $lang in
+"ru")
+ clear
+ echo -e "\e[1;31m$program\e[0m" "\e[1;36mуже была загружена\e[0m";
+ sleep 1.3; output; ;;
+*)
+ clear
+ echo -e "\e[1;31m$program\e[0m" "\e[1;36mhas already been downloaded\e[0m";
+ sleep 1.3; output; ;;
+    esac;
 }
 
 
 checkLangAfterLoad() {
-    if [[ $lang == "ru" ]]; then
+    case $lang in
+  "ru")
 clear
 sleep 0.4;
 echo -e "\e[1;33mзагрузка\e[0m" "\e[1;31m$program..\e[0m";
 sleep 1.1;
 clear
 sleep 0.2;
-cd downloads/                                                                                                         git clone https://github.com/KellyShyno/$program
+cd downloads/
 git clone https://github.com/KellyShyno/$program
 cd ..
 clear
@@ -145,9 +142,8 @@ sleep 0.4;
 echo -e "\e[1;35mзагрузка\e[0m" "\e[1;31m$program\e[0m" "\e[1;35mзавершена\e[0m";
 echo "";
 echo -e "\e[1;36mВы можете найти\e[0m" "\e[1;31m$program\e[0m" "\e[1;36mв директории 'downloads'\e[0m";
-sleep 6;
-
-    else
+sleep 6; ;;
+  *)
 clear
 sleep 0.4;
 echo -e "\e[1;33mdownloading\e[0m" "\e[1;31m$program..\e[0m";
@@ -162,9 +158,8 @@ sleep 0.7;
 echo -e "\e[1;35mdownloading\e[0m" "\e[1;31m$program\e[0m" "\e[1;35mis complete\e[0m";
 echo "";
 echo -e "\e[1;36mYou can find\e[0m" "\e[1;31m$program\e[0m" "\e[1;36min 'downloads' directory\e[0m";
-sleep 7;
-
-    fi;
+sleep 7; ;;
+    esac;
 }
 
 
@@ -268,31 +263,16 @@ echo -en "\e[1;35m (\e[0m""\e[1;31m#\e[0m""\e[1;35m_\e[0m""\e[1;31m#\e[0m";
 echo -en "\e[1;35m)\e[0m" "\e[1;31m> \e[0m";
  read before
 
-    if [[ $before == 1 ]]; then
-repo;
-
-    elif [[ $before == 2 ]]; then
-clear
-sleep 0.16;
-language;
-
-    elif [[ $before == 3 ]]; then
-./data/update/update.sh;
+    case $before in
+1) repo; ;;
+2) clear; sleep 0.16; language; ;;
+3) ./data/update/update.sh; ./ShynoWay.sh; ;;
 #KellyShyno
-./ShynoWay.sh;
-
-    elif [[ $before == 4 ]]; then
+4) echo; ;;
 #toDo
-echo
-    elif [[ $before == "x" ]]; then
-echo "";
-exit 0;
-
-    else
-error;
-shyno;
-
-    fi;
+"x") echo ""; exit 0; ;;
+*) error; shyno; ;;
+    esac;
 }
 
 
