@@ -1,16 +1,19 @@
 #!/bin/bash
 #KellyShyno
 #ShynoWay
+#version: 2.3.3
 
-#rise
 
-changeMod() {
+changeMod()
+{
 chmod -R a+rx *;
 }
 changeMod;
 
 
-banner() {
+
+banner()
+{
 clear
 sleep 0.16;
 echo "";
@@ -27,7 +30,9 @@ echo "";
 }
 
 
-error() {
+
+error()
+{
 #error module
   case $lang in
 "ru")
@@ -42,7 +47,9 @@ error() {
 }
 
 
-loadAll() {
+
+loadAll()
+{
 #program names for array
 programsName=("baseInstall" "customPanel" "customShell" "customKaliShell"
 "sudoInTermux" "sshLocalhost" "killDevice" "passTime");
@@ -102,7 +109,9 @@ fi;
 }
 
 
-chlang() {
+
+chlang()
+{
 #choosing text due language
   case $lang in
 "ru") out="./data/info/ru/$info"; ;;
@@ -111,7 +120,9 @@ chlang() {
 }
 
 
-checkLangBeforeLoad() {
+
+checkLangBeforeLoad()
+{
     case $lang in
 "ru")
  clear
@@ -125,7 +136,9 @@ checkLangBeforeLoad() {
 }
 
 
-checkLangAfterLoad() {
+
+checkLangAfterLoad()
+{
     case $lang in
   "ru")
 clear
@@ -163,7 +176,9 @@ sleep 7; ;;
 }
 
 
-programBlockName() {
+
+programBlockName()
+{
 #red or yellow background
     if [[ $more > 0 && $more < 8 ]]; then
 echo -e " \e[43;30m $program \e[0m";
@@ -173,7 +188,9 @@ echo -e " \e[41;1m $program \e[0m""\e[1;35m (\e[0m""\e[1;31mpaid\e[0m""\e[1;35m)
 }
 
 
-output() {
+
+output()
+{
 banner;
 programBlockName;
 echo "";
@@ -206,7 +223,9 @@ echo -en "\e[1;35m)\e[0m" "\e[1;31m> \e[0m";
 }
 
 
-repo() {
+
+repo()
+{
 #repositories
 banner;
 echo -e "\e[1;33m Repositories:\e[0m";
@@ -250,7 +269,9 @@ echo -en "\e[1;35m)\e[0m" "\e[1;31m> \e[0m";
 }
 
 
-shyno() {
+
+shyno()
+{
 #basic module
 banner;
 echo -e "\e[1;35m/ \e[0m""\e[1;36m1\e[0m""\e[1;35m / \e[0m""\e[1;36mrepositories\e[0m";
@@ -276,7 +297,9 @@ echo -en "\e[1;35m)\e[0m" "\e[1;31m> \e[0m";
 }
 
 
-language() {
+
+language()
+{
 #select language
 banner;
 echo -e "\e[1;35m    --------------------\e[0m";
@@ -292,29 +315,12 @@ echo "";
 echo -en "\e[1;35m (\e[0m""\e[1;31m#\e[0m""\e[1;35m_\e[0m""\e[1;31m#\e[0m";
 echo -en "\e[1;35m)\e[0m" "\e[1;31m> \e[0m";
  read langVar
-    if [[ $langVar == 0 ]]; then
-clear
-echo -e "\e[1;35mSelected\e[0m" "\e[1;36mrussian\e[0m" "\e[1;35mlanguage\e[0m";
-sleep 0.7;
-lang="ru";
-shyno;
 
-    elif [[ $langVar == 1 ]]; then
-clear
-echo -e "\e[1;35mSelected\e[0m" "\e[1;36menglish\e[0m" "\e[1;35mlanguage\e[0m";
-sleep 0.7;
-lang="eng";
-shyno;
-
-    elif [[ $langVar == "x" ]]; then
-echo "";
-exit 0;
-
-    else
-error;
-#KellyShyno
-language;
-
-    fi;
+    case $langVar in
+0) clear; lang="ru"; shyno; ;;
+1) clear; lang="eng"; shyno; ;;
+"x") echo ""; exit 0; ;;
+*) error; language; ;; #KellyShyno
+    esac;
 }
 language;
