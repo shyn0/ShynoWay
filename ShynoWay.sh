@@ -282,8 +282,8 @@ shyno()
 banner;
 echo -e "\e[1;35m/ \e[0m""\e[1;36m1\e[0m""\e[1;35m / \e[0m""\e[1;36mrepositories\e[0m";
 echo -e "\e[1;35m/ \e[0m""\e[1;36m2\e[0m""\e[1;35m / \e[0m""\e[1;36mlanguage\e[0m";
-echo -e "\e[1;35m/ \e[0m""\e[1;36m3\e[0m""\e[1;35m / \e[0m""\e[1;36mupdate\e[0m";
-echo -e "\e[1;35m/ \e[0m""\e[1;31mu\e[0m""\e[1;35m / \e[0m""\e[1;35mabout us\e[0m";
+echo -e "\e[1;35m/ \e[0m""\e[1;36m3\e[0m""\e[1;35m / \e[0m""\e[1;36mabout us\e[0m";
+echo -e "\e[1;35m/ \e[0m""\e[1;31mu\e[0m""\e[1;35m / \e[0m""\e[1;35mupdate\e[0m";
 echo -e "\e[1;35m/ \e[0m""\e[1;31mx\e[0m""\e[1;35m / \e[0m""\e[1;31mexit\e[0m";
 input;
  read before
@@ -291,7 +291,7 @@ input;
     case $before in
 1) repo; ;;
 2) clear; sleep 0.16; language; ;;
-3) ./data/update/update.sh; ./ShynoWay.sh; ;;
+3) echo; ;;
 #KellyShyno
 "u") ./data/update/update.sh; shyno; ;;
 #toDo
