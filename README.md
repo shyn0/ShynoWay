@@ -4,11 +4,11 @@
 
 ## Installing
 
-`git clone https://github.com/KellyShyno/ShynoWay`
-
-`cd ShynoWay`
-
-`./ShynoWay.sh`
+```
+git clone https://github.com/KellyShyno/ShynoWay
+cd ShynoWay
+./ShynoWay.sh
+```
 
 ## About us
 
