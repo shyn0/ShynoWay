@@ -12,6 +12,6 @@ echo -en "\e[1;31m⋄ \e[0m";
 echo -e "\e[1;35mClassicPanel\e[0m" "\e[1;36m- это классическая termux панель\e[0m";
 echo -e "\e[1;36m(модифицированная)\e[0m";
 echo -en "\e[1;31m⋄ \e[0m";
-echo -e "\e[1;35mCodingPanel\e[0m" "\e[1;36m- это termux панель для более\e[0m";
-echo -e "\e[1;36mудобного coding'a в termux\e[0m";
+echo -e "\e[1;4;35mCodingPanel\e[0m" "\e[1;36m- это кастомная termux панель для\e[0m";
+echo -e "\e[1;36mболее удобного coding'a в termux\e[0m";
 
