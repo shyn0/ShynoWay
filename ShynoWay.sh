@@ -61,8 +61,7 @@ loadAll()
 {
 #program names for array
 programsName=("baseInstall" "customPanel" "customShell"
-"customKaliShell" "sudoInTermux" "sshLocalhost"
-"killDevice" "passTime");
+"sudoInTermux" "sshLocalhost" "killDevice");
 
 if [[ $lang == "ru" ]]; then
 #forRu
