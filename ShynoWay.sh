@@ -60,8 +60,8 @@ echo -en "\e[1;35m)\e[0m" "\e[1;31m> \e[0m";
 loadAll()
 {
 #program names for array
-programsName=("baseInstall" "customPanel" "customShell"
-"sudoInTermux" "sshLocalhost" "killDevice");
+programsName=("baseInstall" "customPanel"
+"customShell" "sudoInTermux" "sshLocalhost");
 
 if [[ $lang == "ru" ]]; then
 #forRu
@@ -244,8 +244,7 @@ echo -e "\e[1;35m/ \e[0m""\e[1;36m2\e[0m""\e[1;35m / \e[0m""\e[1;36mcustomPanel\
 echo -e "\e[1;35m/ \e[0m""\e[1;36m3\e[0m""\e[1;35m / \e[0m""\e[1;36mcustomShell\e[0m";
 echo -e "\e[1;35m/ \e[0m""\e[1;36m4\e[0m""\e[1;35m / \e[0m""\e[1;36msudoInTermux\e[0m";
 echo -e "\e[1;35m/ \e[0m""\e[1;36m5\e[0m""\e[1;35m / \e[0m""\e[1;36msshLocalhost\e[0m";
-echo -e "\e[1;35m/ \e[0m""\e[1;36m6\e[0m""\e[1;35m / \e[0m""\e[1;36mkillDevice\e[0m";
-echo -en "\e[1;31m/ \e[0m""\e[1;31m7\e[0m""\e[1;31m / \e[0m""\e[1;4;35mpassTime\e[0m";
+echo -en "\e[1;31m/ \e[0m""\e[1;31m6\e[0m""\e[1;31m / \e[0m""\e[1;4;35mpassTime\e[0m";
 echo -e "\e[1;35m (\e[0m""\e[1;31mpaid\e[0m""\e[1;35m)\e[0m";
 echo "";
 echo -e "\e[1;33m========================================\e[0m";
@@ -263,8 +262,7 @@ input;
 3) program="customShell"; info="customShell.sh"; chlang; output; ;;
 4) program="sudoInTermux"; info="sudoInTermux.sh"; chlang; output; ;;
 5) program="sshLocalhost"; info="sshLocalhost.sh"; chlang; output; ;;
-6) program="killDevice"; info="killDevice.sh"; chlang; output; ;;
-7) program="passTime"; info="passTime.sh"; chlang; output; ;;
+6) program="passTime"; info="passTime.sh"; chlang; output; ;;
 "d") loadAll; repo; ;;
 "x") shyno; ;;
 *) error; repo; ;;
