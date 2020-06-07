@@ -149,38 +149,32 @@ checkLangBeforeLoad()
 checkLangAfterLoad()
 {
     case $lang in
-  "ru")
-clear
-sleep 0.4;
+
+  "ru") clear; sleep 0.4;
 echo -e "\e[1;33mзагрузка\e[0m" "\e[1;31m$program..\e[0m";
-sleep 1.1;
-clear
-sleep 0.2;
+sleep 1.1; clear; sleep 0.2;
 cd downloads/
 git clone https://github.com/KellyShyno/$program
 cd ..
-clear
-sleep 0.4;
+clear; sleep 0.4;
 echo -e "\e[1;35mзагрузка\e[0m" "\e[1;31m$program\e[0m" "\e[1;35mзавершена\e[0m";
 echo "";
 echo -e "\e[1;36mВы можете найти\e[0m" "\e[1;31m$program\e[0m" "\e[1;36mв директории 'downloads'\e[0m";
 sleep 6; ;;
+
   *)
-clear
-sleep 0.4;
+clear; sleep 0.4;
 echo -e "\e[1;33mdownloading\e[0m" "\e[1;31m$program..\e[0m";
-sleep 1.5;
-clear
-sleep 0.7;
+sleep 1.5; clear; sleep 0.7;
 cd downloads/
 git clone https://github.com/KellyShyno/$program
 cd ..
-clear
-sleep 0.7;
+clear; sleep 0.7;
 echo -e "\e[1;35mdownloading\e[0m" "\e[1;31m$program\e[0m" "\e[1;35mis complete\e[0m";
 echo "";
 echo -e "\e[1;36mYou can find\e[0m" "\e[1;31m$program\e[0m" "\e[1;36min 'downloads' directory\e[0m";
 sleep 7; ;;
+
     esac;
 }
 
