@@ -235,7 +235,7 @@ repo()
 {
 #repositories
 banner;
-echo -e "\e[1;33m Repositories:\e[0m";
+echo -e " \e[1;4;33mRepositories:\e[0m";
 echo "";
 #amount
 #KellyShyno
