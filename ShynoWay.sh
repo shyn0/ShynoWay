@@ -183,10 +183,10 @@ sleep 7; ;;
 programBlockName()
 {
 #red or yellow background
-    if [[ $more > 0 && $more < 8 ]]; then
+    if [[ $more > 0 && $more < 6 ]]; then
 echo -e " \e[43;30m $program \e[0m";
     else
-echo -e " \e[41;1m $program \e[0m""\e[1;35m (\e[0m""\e[1;31mpaid\e[0m""\e[1;35m)\e[0m";
+echo -e " \e[41;1m $program \e[0m""\e[1m (\e[0m""\e[1;4;31mpaid\e[0m""\e[1m)\e[0m";
     fi;
 }
 
