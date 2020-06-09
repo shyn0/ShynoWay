@@ -1,7 +1,7 @@
 #!/bin/bash
 #KellyShyno
 #ShynoWay
-#version: 2.3.3
+#version: 1.0.1
 
 
 changeMod()
@@ -24,7 +24,7 @@ echo -e '\e[1;35m ___) | | | | |_| | | | | (_) \ V  V / (_| | |_| |\e[0m';
 echo -e '\e[1;36m|____/|_| |_|\__, |_| |_|\___/ \_/\_/ \__,_|\__, |\e[0m';
 echo -e '\e[1;36m             |___/                          |___/\e[0m';
 echo "";
-echo -e "\e[1;31mversion: 2.3.2\e[0m";
+echo -e "\e[1;31mversion: 1.0.1\e[0m";
 echo -e "\e[1;35mvk:\e[0m" "\e[1;4;36mhttps://vk.com/linuxkelly\e[0m";
 echo "";
 }
@@ -119,6 +119,44 @@ fi;
 
 
 
+programLink()
+{
+#linkArray
+linkArray=( $(./data/dataBase/link.sh) );
+
+
+    case $lang in
+ "ru")
+echo "";
+echo -en "\e[1;1mПодробнее:\e[0m"; ;;
+
+ "eng")
+echo "";
+echo -en "\e[1;1mMore details:\e[0m"; ;;
+    esac;
+
+
+#linkDisplay
+linkId=$(($more - 1));
+echo -e " \e[1;4;35m${linkArray[$linkId]}\e[0m";
+#echo "";
+
+
+#paidProgram
+  if [[ $more > 5 ]]; then
+
+    case $lang in
+ "ru") echo -en "\e[1;1mДля покупки:\e[0m";
+echo -e " \e[1;4;31mhttps://vk.com/shynofreak\e[0m"; ;;
+ "eng") echo -en "\e[1;1mFor buying:\e[0m";
+echo -e " \e[1;4;31mhttps://vk.com/shynofreak\e[0m"; ;;
+    esac;
+
+  fi;
+}
+
+
+
 chlang()
 {
 #choosing text due language
@@ -182,11 +220,18 @@ sleep 7; ;;
 
 programBlockName()
 {
-#red or yellow background
+#background and cost of program
     if [[ $more > 0 && $more < 6 ]]; then
 echo -e " \e[43;30m $program \e[0m";
     else
-echo -e " \e[41;1m $program \e[0m""\e[1m (\e[0m""\e[1;4;31mpaid\e[0m""\e[1m)\e[0m";
+costArray=( $(./data/dataBase/programCost.sh) );
+costId=$(($more - 6));
+
+echo -en " \e[41;1m $program \e[0m"'\e[1;31m |\e[0m';
+        case $lang in
+"ru") echo -e "\e[1;1m${costArray[$costId]} рублей\e[0m"'\e[1;31m|\e[0m'; ;;
+"eng") echo -e "\e[1;1m${costArray[$costId]} rubles\e[0m"'\e[1;31m|\e[0m'; ;;
+        esac;
     fi;
 }
 
@@ -198,6 +243,7 @@ banner;
 programBlockName;
 echo "";
 $out;
+programLink;
 echo "";
 echo -e "\e[1;33m====================================\e[0m";
 echo -en '\e[1;33m|  \e[0m'"\e[1;31m[ \e[0m""\e[1;36mx\e[0m""\e[1;31m ] \e[0m";
@@ -256,6 +302,7 @@ input;
 3) program="customShell"; info="customShell.sh"; chlang; output; ;;
 4) program="sudoInTermux"; info="sudoInTermux.sh"; chlang; output; ;;
 5) program="sshLocalhost"; info="sshLocalhost.sh"; chlang; output; ;;
+#paid
 6) program="passTime"; info="passTime.sh"; chlang; output; ;;
 "d") loadAll; repo; ;;
 "x") shyno; ;;
