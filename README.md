@@ -7,6 +7,7 @@
 ```
 git clone https://github.com/KellyShyno/ShynoWay
 cd ShynoWay
+chmod +x ShynoWay.sh
 ./ShynoWay.sh
 ```
 
