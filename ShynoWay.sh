@@ -25,7 +25,6 @@ echo -e '\e[1;36m|____/|_| |_|\__, |_| |_|\___/ \_/\_/ \__,_|\__, |\e[0m';
 echo -e '\e[1;36m             |___/                          |___/\e[0m';
 echo "";
 echo -e "\e[1;31mversion: 1.0.1\e[0m";
-echo -e "\e[1;35mvk:\e[0m" "\e[1;4;36mhttps://vk.com/linuxkelly\e[0m";
 echo "";
 }
 
@@ -53,6 +52,32 @@ input()
 echo "";
 echo -en "\e[1;35m (\e[0m""\e[1;31m#\e[0m""\e[1;35m_\e[0m""\e[1;31m#\e[0m";
 echo -en "\e[1;35m)\e[0m" "\e[1;31m> \e[0m";
+}
+
+
+
+aboutUs()
+{
+banner;
+echo -en "\e[1;36m⊹ \e[0m";
+echo -e "\e[1;35mProgram:\e[0m" "\e[1;4;36mShynoWay\e[0m";
+echo -en "\e[1;36m⊹ \e[0m";
+echo -e "\e[1;35mAuthor:\e[0m" "\e[1;4;36mKellyShyno\e[0m";
+echo -en "\e[1;36m⊹ \e[0m";
+echo -e "\e[1;35mVk:\e[0m" "\e[1;4;36mhttps://vk.com/linuxkelly\e[0m";
+echo "";
+
+#inputBlock
+echo -e "\e[1;33m================\e[0m";
+echo -en '\e[1;33m|  \e[0m'"\e[1;31m[ \e[0m""\e[1;36mx\e[0m""\e[1;31m ] \e[0m";
+echo -e "\e[1;36mback\e[0m"'\e[1;33m  |\e[0m';
+echo -e "\e[1;33m================\e[0m";
+input;
+  read backUs
+    case $backUs in
+"x") shyno; ;;
+*) error; aboutUs; ;;
+    esac;
 }
 
 
@@ -327,8 +352,7 @@ input;
     case $before in
 1) repo; ;;
 2) clear; sleep 0.16; language; ;;
-3) echo; ;;
-#KellyShyno
+3) aboutUs; ;;
 "u") ./data/update/update.sh; shyno; ;;
 "x") echo ""; exit 0; ;;
 *) error; shyno; ;;
