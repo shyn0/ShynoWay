@@ -14,7 +14,7 @@ changeMod;
 
 banner()
 {
-clear
+clear;
 sleep 0.16;
 echo "";
 echo -e '\e[1;36m ____  _                    __        __\e[0m';
@@ -36,11 +36,11 @@ error()
   case $lang in
 "ru")
  clear
- echo -e "\e[1;31mERROR: введите верное число..\e[0m";
+ echo -e "\e[1;31mERROR: введите верный знак..\e[0m";
  sleep 0.6; ;;
 *)
  clear
- echo -e "\e[1;31mERROR: write the correct number..\e[0m";
+ echo -e "\e[1;31mERROR: write the correct sign..\e[0m";
  sleep 0.6; ;;
   esac;
 }
