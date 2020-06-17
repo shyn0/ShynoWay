@@ -3,12 +3,7 @@
 #ShynoWay
 #version: 1.0.1
 
-
-changeMod()
-{
 chmod -R a+rx *;
-}
-changeMod;
 
 
 
