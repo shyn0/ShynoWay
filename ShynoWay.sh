@@ -81,7 +81,7 @@ loadAll()
 {
 #program names for array
 programsName=("baseInstall" "customPanel"
-"customShell" "sudoInTermux" "sshLocalhost");
+"customShell" "Faxe" "sudoInTermux" "sshLocalhost");
 
 if [[ $lang == "ru" ]]; then
 #forRu
@@ -163,7 +163,7 @@ echo -e " \e[1;4;35m${linkArray[$linkId]}\e[0m";
 
 
 #paidProgram
-  if [[ $more > 5 ]]; then
+  if [[ $more > 6 ]]; then
 
     case $lang in
  "ru") echo -en "\e[1;1mДля покупки:\e[0m";
@@ -241,11 +241,11 @@ sleep 7; ;;
 programBlockName()
 {
 #background and cost of program
-    if [[ $more > 0 && $more < 6 ]]; then
+    if [[ $more > 0 && $more < 7 ]]; then
 echo -e " \e[43;30m $program \e[0m";
     else
 costArray=( $(./data/dataBase/programCost.sh) );
-costId=$(($more - 6));
+costId=$(($more - 7));
 
 echo -en " \e[41;1m $program \e[0m"'\e[1;31m |\e[0m';
         case $lang in
@@ -302,9 +302,12 @@ echo "";
 echo -e "\e[1;35m/ \e[0m""\e[1;36m1\e[0m""\e[1;35m / \e[0m""\e[1;36mbaseInstall\e[0m";
 echo -e "\e[1;35m/ \e[0m""\e[1;36m2\e[0m""\e[1;35m / \e[0m""\e[1;36mcustomPanel\e[0m";
 echo -e "\e[1;35m/ \e[0m""\e[1;36m3\e[0m""\e[1;35m / \e[0m""\e[1;36mcustomShell\e[0m";
-echo -e "\e[1;35m/ \e[0m""\e[1;36m4\e[0m""\e[1;35m / \e[0m""\e[1;36msudoInTermux\e[0m";
-echo -e "\e[1;35m/ \e[0m""\e[1;36m5\e[0m""\e[1;35m / \e[0m""\e[1;36msshLocalhost\e[0m";
-echo -en "\e[1;31m/ \e[0m""\e[1;31m6\e[0m""\e[1;31m / \e[0m""\e[1;4;35mpassTime\e[0m";
+echo -e "\e[1;35m/ \e[0m""\e[1;36m4\e[0m""\e[1;35m / \e[0m""\e[1;36mFaxe\e[0m";
+echo -e "\e[1;35m/ \e[0m""\e[1;36m5\e[0m""\e[1;35m / \e[0m""\e[1;36msudoInTermux\e[0m";
+echo -e "\e[1;35m/ \e[0m""\e[1;36m6\e[0m""\e[1;35m / \e[0m""\e[1;36msshLocalhost\e[0m";
+echo -en "\e[1;31m/ \e[0m""\e[1;31m7\e[0m""\e[1;31m / \e[0m""\e[1;4;35mhiddy\e[0m";
+echo -e "\e[1;35m (\e[0m""\e[1;31mpaid\e[0m""\e[1;35m)\e[0m";
+echo -en "\e[1;31m/ \e[0m""\e[1;31m8\e[0m""\e[1;31m / \e[0m""\e[1;4;35mpassTime\e[0m";
 echo -e "\e[1;35m (\e[0m""\e[1;31mpaid\e[0m""\e[1;35m)\e[0m";
 echo "";
 echo -e "\e[1;33m========================================\e[0m";
@@ -320,10 +323,12 @@ input;
 1) program="baseInstall"; info="baseInstall.sh"; chlang; output; ;;
 2) program="customPanel"; info="customPanel.sh"; chlang; output; ;;
 3) program="customShell"; info="customShell.sh"; chlang; output; ;;
-4) program="sudoInTermux"; info="sudoInTermux.sh"; chlang; output; ;;
-5) program="sshLocalhost"; info="sshLocalhost.sh"; chlang; output; ;;
+4) program="Faxe"; info="Faxe.sh"; chlang; output; ;;
+5) program="sudoInTermux"; info="sudoInTermux.sh"; chlang; output; ;;
+6) program="sshLocalhost"; info="sshLocalhost.sh"; chlang; output; ;;
 #paid
-6) program="passTime"; info="passTime.sh"; chlang; output; ;;
+7) program="hiddy"; info="hiddy.sh"; chlang; output; ;;
+8) program="passTime"; info="passTime.sh"; chlang; output; ;;
 "d") loadAll; repo; ;;
 "x") shyno; ;;
 *) error; repo; ;;
