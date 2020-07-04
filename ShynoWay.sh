@@ -1,7 +1,7 @@
 #!/bin/bash
 #KellyShyno
 #ShynoWay
-#version: 1.0.1
+#version: 1.0.2
 
 chmod -R a+rx *;
 
@@ -19,7 +19,7 @@ echo -e '\e[1;35m ___) | | | | |_| | | | | (_) \ V  V / (_| | |_| |\e[0m';
 echo -e '\e[1;36m|____/|_| |_|\__, |_| |_|\___/ \_/\_/ \__,_|\__, |\e[0m';
 echo -e '\e[1;36m             |___/                          |___/\e[0m';
 echo "";
-echo -e "\e[1;31mversion: 1.0.1\e[0m";
+echo -e "\e[1;31mversion: 1.0.2\e[0m";
 echo "";
 }
 
