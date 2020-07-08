@@ -2,6 +2,6 @@
 #KellyShyno
 
 #hiddy
-echo "300";
+echo "250";
 #passTime
 echo "300";
