@@ -10,7 +10,7 @@ echo "https://vk.com/wall-192028701_119";
 #Faxe
 echo "https://vk.com/wall-192028701_175";
 #sudoInTermux
-echo "https://vk.com/wall-192028701_73";
+echo "https://vk.com/wall-192028701_202";
 #sshLocalhost
 echo "https://vk.com/wall-192028701_38";
 #hiddy
