@@ -81,7 +81,7 @@ loadAll()
 {
 #program names for array
 programsName=("baseInstall" "customPanel"
-"customShell" "Faxe" "sudoInTermux" "sshLocalhost");
+"customShell" "Faxe" "sudoInTermux");
 
 if [[ $lang == "ru" ]]; then
 #forRu
@@ -163,7 +163,7 @@ echo -e " \e[1;4;35m${linkArray[$linkId]}\e[0m";
 
 
 #paidProgram
-  if [[ $more > 6 ]]; then
+  if [[ $more > 5 ]]; then
 
     case $lang in
  "ru") echo -en "\e[1;1mДля покупки:\e[0m";
@@ -241,11 +241,11 @@ sleep 7; ;;
 programBlockName()
 {
 #background and cost of program
-    if [[ $more > 0 && $more < 7 ]]; then
+    if [[ $more > 0 && $more < 6 ]]; then
 echo -e " \e[43;30m $program \e[0m";
     else
 costArray=( $(./data/dataBase/programCost.sh) );
-costId=$(($more - 7));
+costId=$(($more - 6));
 
 echo -en " \e[41;1m $program \e[0m"'\e[1;31m |\e[0m';
         case $lang in
@@ -304,10 +304,9 @@ echo -e "\e[1;35m/ \e[0m""\e[1;36m2\e[0m""\e[1;35m / \e[0m""\e[1;36mcustomPanel\
 echo -e "\e[1;35m/ \e[0m""\e[1;36m3\e[0m""\e[1;35m / \e[0m""\e[1;36mcustomShell\e[0m";
 echo -e "\e[1;35m/ \e[0m""\e[1;36m4\e[0m""\e[1;35m / \e[0m""\e[1;36mFaxe\e[0m";
 echo -e "\e[1;35m/ \e[0m""\e[1;36m5\e[0m""\e[1;35m / \e[0m""\e[1;36msudoInTermux\e[0m";
-echo -e "\e[1;35m/ \e[0m""\e[1;36m6\e[0m""\e[1;35m / \e[0m""\e[1;36msshLocalhost\e[0m";
-echo -en "\e[1;31m/ \e[0m""\e[1;31m7\e[0m""\e[1;31m / \e[0m""\e[1;4;35mhiddy\e[0m";
+echo -en "\e[1;31m/ \e[0m""\e[1;31m6\e[0m""\e[1;31m / \e[0m""\e[1;4;35mhiddy\e[0m";
 echo -e "\e[1;35m (\e[0m""\e[1;31mpaid\e[0m""\e[1;35m)\e[0m";
-echo -en "\e[1;31m/ \e[0m""\e[1;31m8\e[0m""\e[1;31m / \e[0m""\e[1;4;35mpassTime\e[0m";
+echo -en "\e[1;31m/ \e[0m""\e[1;31m7\e[0m""\e[1;31m / \e[0m""\e[1;4;35mpassTime\e[0m";
 echo -e "\e[1;35m (\e[0m""\e[1;31mpaid\e[0m""\e[1;35m)\e[0m";
 echo "";
 echo -e "\e[1;33m========================================\e[0m";
@@ -337,33 +336,11 @@ input;
 
 
 
-shyno()
-{
-#basic module
-banner;
-echo -e "\e[1;35m/ \e[0m""\e[1;36m1\e[0m""\e[1;35m / \e[0m""\e[1;36mrepositories\e[0m";
-echo -e "\e[1;35m/ \e[0m""\e[1;36m2\e[0m""\e[1;35m / \e[0m""\e[1;36mlanguage\e[0m";
-echo -e "\e[1;35m/ \e[0m""\e[1;36m3\e[0m""\e[1;35m / \e[0m""\e[1;36mabout us\e[0m";
-echo -e "\e[1;35m/ \e[0m""\e[1;31mu\e[0m""\e[1;35m / \e[0m""\e[1;35mupdate\e[0m";
-echo -e "\e[1;35m/ \e[0m""\e[1;31mx\e[0m""\e[1;35m / \e[0m""\e[1;31mexit\e[0m";
-input;
- read before
-
-    case $before in
-1) repo; ;;
-2) clear; sleep 0.16; language; ;;
-3) aboutUs; ;;
-"u") ./data/update/update.sh; shyno; ;;
-"x") echo ""; exit 0; ;;
-*) error; shyno; ;;
-    esac;
-}
-
-
-
 language()
 {
 #select language
+clear;
+sleep 0.16;
 banner;
 echo -e "\e[1;35m    --------------------\e[0m";
 echo -e "\e[1;35m    | \e[0m""\e[1;36mSelect language:""\e[1;35m |\e[0m";
@@ -384,4 +361,30 @@ input;
 *) error; language; ;; #KellyShyno
     esac;
 }
-language;
+
+
+
+shyno()
+{
+#basic module
+banner;
+echo -e "\e[1;35m/ \e[0m""\e[1;36m1\e[0m""\e[1;35m / \e[0m""\e[1;36mrepositories\e[0m";
+echo -e "\e[1;35m/ \e[0m""\e[1;36m2\e[0m""\e[1;35m / \e[0m""\e[1;36mlanguage\e[0m";
+echo -e "\e[1;35m/ \e[0m""\e[1;36m3\e[0m""\e[1;35m / \e[0m""\e[1;36mabout us\e[0m";
+echo -e "\e[1;35m/ \e[0m""\e[1;31mu\e[0m""\e[1;35m / \e[0m""\e[1;35mupdate\e[0m";
+echo -e "\e[1;35m/ \e[0m""\e[1;31mx\e[0m""\e[1;35m / \e[0m""\e[1;31mexit\e[0m";
+input;
+ read before
+
+    case $before in
+1) repo; ;;
+2) language; ;;
+3) aboutUs; ;;
+"u") ./data/update/update.sh; ./ShynoWay.sh; ;;
+"x") echo ""; exit 0; ;;
+*) error; shyno; ;;
+    esac;
+}
+#default language
+lang="ru";
+shyno;
