@@ -51,9 +51,31 @@ echo -en "\e[1;35m)\e[0m" "\e[1;31m> \e[0m";
 
 
 
+back()
+{
+echo "";
+echo -e "\e[1;33m====================================\e[0m";
+echo -en '\e[1;33m|  \e[0m'"\e[1;31m[ \e[0m""\e[1;36mb\e[0m""\e[1;31m ] \e[0m";
+echo -en "\e[1;36mback\e[0m"'\e[1;33m  ||  ';
+echo -en "\e[1;35m[ \e[0m""\e[1;36md\e[0m""\e[1;35m ] \e[0m";
+echo -e "\e[1;36mdownload\e[0m"'\e[1;33m  |';
+echo -e "\e[1;33m====================================\e[0m";
+}
+
+
+
+exitNow()
+{
+echo -e "\e[1;30mFor exit the program: \"x\"\e[0m";
+echo "";
+}
+
+
+
 aboutUs()
 {
 banner;
+exitNow;
 echo -en "\e[1;36m⊹ \e[0m";
 echo -e "\e[1;35mProgram:\e[0m" "\e[1;4;36mShynoWay\e[0m";
 echo -en "\e[1;36m⊹ \e[0m";
@@ -61,16 +83,12 @@ echo -e "\e[1;35mAuthor:\e[0m" "\e[1;4;36mKellyShyno\e[0m";
 echo -en "\e[1;36m⊹ \e[0m";
 echo -e "\e[1;35mVk:\e[0m" "\e[1;4;36mhttps://vk.com/linuxkelly\e[0m";
 echo "";
-
-#inputBlock
-echo -e "\e[1;33m================\e[0m";
-echo -en '\e[1;33m|  \e[0m'"\e[1;31m[ \e[0m""\e[1;36mx\e[0m""\e[1;31m ] \e[0m";
-echo -e "\e[1;36mback\e[0m"'\e[1;33m  |\e[0m';
-echo -e "\e[1;33m================\e[0m";
+back;
 input;
   read backUs
     case $backUs in
-"x") shyno; ;;
+"b") shyno; ;;
+"x") echo ""; exit 0; ;;
 *) error; aboutUs; ;;
     esac;
 }
@@ -81,7 +99,8 @@ loadAll()
 {
 #program names for array
 programsName=("baseInstall" "customPanel"
-"customShell" "Faxe" "sudoInTermux");
+"customShell" "Faxe" "sudoInTermux" "hiddy"
+"passTime" "rity");
 
 if [[ $lang == "ru" ]]; then
 #forRu
@@ -260,17 +279,12 @@ echo -en " \e[41;1m $program \e[0m"'\e[1;31m |\e[0m';
 output()
 {
 banner;
+exitNow;
 programBlockName;
 echo "";
 $out;
 programLink;
-echo "";
-echo -e "\e[1;33m====================================\e[0m";
-echo -en '\e[1;33m|  \e[0m'"\e[1;31m[ \e[0m""\e[1;36mx\e[0m""\e[1;31m ] \e[0m";
-echo -en "\e[1;36mback\e[0m"'\e[1;33m  ||  ';
-echo -en "\e[1;35m[ \e[0m""\e[1;36md\e[0m""\e[1;35m ] \e[0m";
-echo -e "\e[1;36mdownload\e[0m"'\e[1;33m  |';
-echo -e "\e[1;33m====================================\e[0m";
+back;
 input;
  read load
 
@@ -284,7 +298,8 @@ input;
         checkLangAfterLoad; repo;
       fi; ;;
 
-"x") repo; ;;
+"b") repo; ;;
+"x") echo ""; exit 0; ;;
 *) error; output; ;;
   esac;
 }
@@ -295,6 +310,7 @@ repo()
 {
 #repositories
 banner;
+exitNow;
 echo -e " \e[1;4;33mRepositories:\e[0m";
 echo "";
 #amount
@@ -308,9 +324,11 @@ echo -en "\e[1;31m/ \e[0m""\e[1;31m6\e[0m""\e[1;31m / \e[0m""\e[1;4;35mhiddy\e[0
 echo -e "\e[1;35m (\e[0m""\e[1;31mpaid\e[0m""\e[1;35m)\e[0m";
 echo -en "\e[1;31m/ \e[0m""\e[1;31m7\e[0m""\e[1;31m / \e[0m""\e[1;4;35mpassTime\e[0m";
 echo -e "\e[1;35m (\e[0m""\e[1;31mpaid\e[0m""\e[1;35m)\e[0m";
+echo -en "\e[1;31m/ \e[0m""\e[1;31m8\e[0m""\e[1;31m / \e[0m""\e[1;4;35mrity\e[0m";
+echo -e "\e[1;35m (\e[0m""\e[1;31mpaid\e[0m""\e[1;35m)\e[0m";
 echo "";
 echo -e "\e[1;33m========================================\e[0m";
-echo -en '\e[1;33m|  \e[0m'"\e[1;31m[ \e[0m""\e[1;36mx\e[0m""\e[1;31m ] \e[0m";
+echo -en '\e[1;33m|  \e[0m'"\e[1;31m[ \e[0m""\e[1;36mb\e[0m""\e[1;31m ] \e[0m";
 echo -en "\e[1;36mback\e[0m"'\e[1;33m  ||  ';
 echo -en "\e[1;35m[ \e[0m""\e[1;36md\e[0m""\e[1;35m ] \e[0m";
 echo -e "\e[1;36mdownload all\e[0m"'\e[1;33m  |';
@@ -324,12 +342,13 @@ input;
 3) program="customShell"; info="customShell.sh"; chlang; output; ;;
 4) program="Faxe"; info="Faxe.sh"; chlang; output; ;;
 5) program="sudoInTermux"; info="sudoInTermux.sh"; chlang; output; ;;
-6) program="sshLocalhost"; info="sshLocalhost.sh"; chlang; output; ;;
 #paid
-7) program="hiddy"; info="hiddy.sh"; chlang; output; ;;
-8) program="passTime"; info="passTime.sh"; chlang; output; ;;
+6) program="hiddy"; info="hiddy.sh"; chlang; output; ;;
+7) program="passTime"; info="passTime.sh"; chlang; output; ;;
+8) program="rity"; info="rity.sh"; chlang; output; ;;
 "d") loadAll; repo; ;;
-"x") shyno; ;;
+"b") shyno; ;;
+"x") echo ""; exit 0; ;;
 *) error; repo; ;;
   esac;
 }
@@ -339,9 +358,8 @@ input;
 language()
 {
 #select language
-clear;
-sleep 0.16;
 banner;
+exitNow;
 echo -e "\e[1;35m    --------------------\e[0m";
 echo -e "\e[1;35m    | \e[0m""\e[1;36mSelect language:""\e[1;35m |\e[0m";
 echo -e "\e[1;35m    --------------------\e[0m";
@@ -350,13 +368,14 @@ echo "";
 #language.#0#1
 echo -e "\e[1;35m[ \e[0m""\e[1;36m0\e[0m""\e[1;35m ] \e[0m""\e[1;36mru\e[0m";
 echo -e "\e[1;35m[ \e[0m""\e[1;36m1\e[0m""\e[1;35m ] \e[0m""\e[1;36meng\e[0m";
-echo -e "\e[1;35m[ \e[0m""\e[1;31mx\e[0m""\e[1;35m ] \e[0m""\e[1;31mexit\e[0m";
+echo -e "\e[1;35m[ \e[0m""\e[1;31mb\e[0m""\e[1;35m ] \e[0m""\e[1;31mexit\e[0m";
 input;
  read langVar
 
     case $langVar in
 0) clear; lang="ru"; shyno; ;;
 1) clear; lang="eng"; shyno; ;;
+"b") shyno; ;;
 "x") echo ""; exit 0; ;;
 *) error; language; ;; #KellyShyno
     esac;
