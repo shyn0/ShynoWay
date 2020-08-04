@@ -15,3 +15,5 @@ echo "https://vk.com/wall-192028701_202";
 echo "none";
 #passTime
 echo "none";
+#rity
+echo "none";
