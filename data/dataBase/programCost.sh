@@ -4,4 +4,6 @@
 #hiddy
 echo "250";
 #passTime
-echo "300";
+echo "250";
+#rity
+echo "350";
