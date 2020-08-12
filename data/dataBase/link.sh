@@ -5,8 +5,8 @@
 echo "https://vk.com/wall-192028701_36";
 #customPanel
 echo "https://vk.com/wall-192028701_159";
-#customShell
-echo "https://vk.com/wall-192028701_119";
+#customBash
+echo "soon..";
 #Faxe
 echo "https://vk.com/wall-192028701_175";
 #sudoInTermux
