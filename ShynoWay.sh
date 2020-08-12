@@ -99,7 +99,7 @@ loadAll()
 {
 #program names for array
 programsName=("baseInstall" "customPanel"
-"customShell" "Faxe" "sudoInTermux" "hiddy"
+"customBash" "Faxe" "sudoInTermux" "hiddy"
 "passTime" "rity");
 
 if [[ $lang == "ru" ]]; then
@@ -317,7 +317,7 @@ echo "";
 #KellyShyno
 echo -e "\e[1;35m/ \e[0m""\e[1;36m1\e[0m""\e[1;35m / \e[0m""\e[1;36mbaseInstall\e[0m";
 echo -e "\e[1;35m/ \e[0m""\e[1;36m2\e[0m""\e[1;35m / \e[0m""\e[1;36mcustomPanel\e[0m";
-echo -e "\e[1;35m/ \e[0m""\e[1;36m3\e[0m""\e[1;35m / \e[0m""\e[1;36mcustomShell\e[0m";
+echo -e "\e[1;35m/ \e[0m""\e[1;36m3\e[0m""\e[1;35m / \e[0m""\e[1;36mcustomBash\e[0m";
 echo -e "\e[1;35m/ \e[0m""\e[1;36m4\e[0m""\e[1;35m / \e[0m""\e[1;36mFaxe\e[0m";
 echo -e "\e[1;35m/ \e[0m""\e[1;36m5\e[0m""\e[1;35m / \e[0m""\e[1;36msudoInTermux\e[0m";
 echo -en "\e[1;31m/ \e[0m""\e[1;31m6\e[0m""\e[1;31m / \e[0m""\e[1;4;35mhiddy\e[0m";
@@ -339,7 +339,7 @@ input;
   case $more in
 1) program="baseInstall"; info="baseInstall.sh"; chlang; output; ;;
 2) program="customPanel"; info="customPanel.sh"; chlang; output; ;;
-3) program="customShell"; info="customShell.sh"; chlang; output; ;;
+3) program="customBash"; info="customBash.sh"; chlang; output; ;;
 4) program="Faxe"; info="Faxe.sh"; chlang; output; ;;
 5) program="sudoInTermux"; info="sudoInTermux.sh"; chlang; output; ;;
 #paid
