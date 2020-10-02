@@ -66,7 +66,7 @@ echo -e "\e[1;33m====================================\e[0m";
 
 exitNow()
 {
-echo -e "\e[1;30mFor exit the program: \"x\"\e[0m";
+echo -e "\e[1;30mTo exit the program: \"x\"\e[0m";
 echo "";
 }
 
