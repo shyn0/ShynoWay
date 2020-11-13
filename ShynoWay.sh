@@ -4,7 +4,7 @@
 #version: 1.1.2
 
 chmod -R a+rx *;
-
+admin="https://vk.com/shyno";
 
 
 banner()
@@ -186,9 +186,9 @@ echo -e " \e[1;4;35m${linkArray[$linkId]}\e[0m";
 
     case $lang in
  "ru") echo -en "\e[1;1mДля покупки:\e[0m";
-echo -e " \e[1;4;31mhttps://vk.com/shynofreak\e[0m"; ;;
+echo -e " \e[1;4;31m$admin\e[0m"; ;;
  "eng") echo -en "\e[1;1mFor buying:\e[0m";
-echo -e " \e[1;4;31mhttps://vk.com/shynofreak\e[0m"; ;;
+echo -e " \e[1;4;31m$admin\e[0m"; ;;
     esac;
 
   fi;
