@@ -1,11 +1,11 @@
 # ShynoWay
 
-> **ShynoWay - is the programs installer by KellyShyno**
+> **ShynoWay - is the programs installer by shyno**
 
 ## Installing
 
 ```
-git clone https://github.com/KellyShyno/ShynoWay
+git clone https://github.com/shyn0/ShynoWay
 cd ShynoWay
 chmod -R a+rx *
 ./ShynoWay.sh
@@ -14,7 +14,5 @@ chmod -R a+rx *
 ## About us
 
 > **vk**: <https://vk.com/linuxkelly>
-
-> **YouTube**: <https://www.youtube.com/channel/UC0FAZ36boaHKZgzbD3rMa_A>
 
 **break a leg (#_#)**
