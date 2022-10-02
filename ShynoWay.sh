@@ -404,7 +404,9 @@ input;
 }
 #default language
 lang="ru";
-banner;
-echo -e "\e[1;30mTemporarily not working\e[0m";
-echo "";
-exit 0;
+
+shyno;
+#banner;
+#echo -e "\e[1;30mTemporarily not working\e[0m";
+#echo "";
+#exit 0;
